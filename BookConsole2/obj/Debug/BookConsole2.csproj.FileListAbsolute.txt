@@ -1,0 +1,14 @@
+C:\Users\Damien\source\repos\BookConsole2\BookConsole2\bin\Debug\BookConsole2.exe.config
+C:\Users\Damien\source\repos\BookConsole2\BookConsole2\bin\Debug\BookConsole2.exe
+C:\Users\Damien\source\repos\BookConsole2\BookConsole2\bin\Debug\BookConsole2.pdb
+C:\Users\Damien\source\repos\BookConsole2\BookConsole2\bin\Debug\EntityFramework.dll
+C:\Users\Damien\source\repos\BookConsole2\BookConsole2\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Damien\source\repos\BookConsole2\BookConsole2\bin\Debug\EntityFramework.xml
+C:\Users\Damien\source\repos\BookConsole2\BookConsole2\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Damien\source\repos\BookConsole2\BookConsole2\obj\Debug\BookConsole2.csprojAssemblyReference.cache
+C:\Users\Damien\source\repos\BookConsole2\BookConsole2\obj\Debug\BookConsole2.csproj.CopyComplete
+C:\Users\Damien\source\repos\BookConsole2\BookConsole2\obj\Debug\BookConsole2.exe
+C:\Users\Damien\source\repos\BookConsole2\BookConsole2\obj\Debug\BookConsole2.pdb
+C:\Users\Damien\source\repos\BookConsole2\BookConsole2\bin\Debug\BookShared.dll
+C:\Users\Damien\source\repos\BookConsole2\BookConsole2\bin\Debug\BookShared.pdb
+C:\Users\Damien\source\repos\BookConsole2\BookConsole2\bin\Debug\BookShared.dll.config
