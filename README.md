@@ -9,4 +9,4 @@ It contains a CRUD console app and a CRUD web app. The two projects share the cl
 
 Adapting the project taught me more about Entity Framework 6, Connection Strings, Database Initializers, LINQ statements, CRUD functionality, Dispose Method, etc.
 
-This web-app is not live at the moment but all of the code works as it should. To see how I built it please see my dev blog - http://www.text.damienasp.com/007.html
+This web-app is not live at the moment but all of the code works as it should. To see how I built it please look at my dev blog - http://www.text.damienasp.com/007.html
