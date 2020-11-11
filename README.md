@@ -3,7 +3,7 @@
 This app is adapted from a Treehouse project - 
 https://github.com/treehouse-projects/dotnet-comic-book-library-manager
 
-I adapted it for books (Fiction/Non-Fiction) rather than comicbooks.
+I followed a 4-hour tutorial and adapted the project for books (Fiction/Non-Fiction) rather than comic books.
 
 It contains a CRUD console app and a CRUD web app. The two projects share the class files via a class library.
 
