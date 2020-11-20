@@ -11,18 +11,11 @@ using BookShared.Models;
 
 namespace BookWebApp.Controllers
 {
-    public class BooksController : Controller
+    public class BooksController : BaseController
     {
-        
-        private Context _context = null;
-        public BooksController()
-        {
-            _context = new Context();
-        }
-
         public ActionResult Index()
         {
-            var books = _context.Books      
+            var books = Context.Books      
                     .Include(b => b.Author)
                     .OrderBy(b => b.Author.Name)
                     .ToList();
@@ -37,7 +30,7 @@ namespace BookWebApp.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            var book = _context.Books
+            var book = Context.Books
                     .Include(b => b.Author)
                     .Include(b => b.Genres.Select(c => c.Genre))
                     .Include(b => b.Genres.Select(c => c.Fiction))
@@ -57,7 +50,7 @@ namespace BookWebApp.Controllers
             var viewModel = new BooksAddViewModel();
 
             //Pass the Context class to the view model "Init" method.
-            viewModel.Init(_context);
+            viewModel.Init(Context);
 
             return View(viewModel);
         }
@@ -67,8 +60,8 @@ namespace BookWebApp.Controllers
         {
             var book = viewModel.Book;
             book.AddGenre(viewModel.GenreId, viewModel.FictionId);
-            _context.Books.Add(book);
-            _context.SaveChanges();
+            Context.Books.Add(book);
+            Context.SaveChanges();
 
             return RedirectToAction("Detail", new { id = book.Id });
         }
@@ -80,7 +73,7 @@ namespace BookWebApp.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            var book = _context.Books
+            var book = Context.Books
                 .Where(cb => cb.Id == id)
                 .SingleOrDefault();
 
@@ -93,7 +86,7 @@ namespace BookWebApp.Controllers
             {
                 Book = book
             };
-            viewModel.Init(_context);
+            viewModel.Init(Context);
 
             return View(viewModel);
         }
@@ -103,8 +96,8 @@ namespace BookWebApp.Controllers
         {
             var book = viewModel.Book;
 
-            _context.Entry(book).State = EntityState.Modified;
-            _context.SaveChanges();
+            Context.Entry(book).State = EntityState.Modified;
+            Context.SaveChanges();
 
             return RedirectToAction("Detail", new { id = book.Id });
         }
@@ -116,7 +109,7 @@ namespace BookWebApp.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            var book = _context.Books
+            var book = Context.Books
                 .Include(cb => cb.Author)
                 .Where(cb => cb.Id == id)
                 .SingleOrDefault();
@@ -133,26 +126,10 @@ namespace BookWebApp.Controllers
         public ActionResult Delete(int id)
         {
             var book = new Book() { Id = id };
-            _context.Entry(book).State = EntityState.Deleted;
-            _context.SaveChanges();
+            Context.Entry(book).State = EntityState.Deleted;
+            Context.SaveChanges();
 
             return RedirectToAction("Index");
-        }
-
-
-        private bool _disposed = false;
-        protected override void Dispose(bool disposing)
-        {
-            if (_disposed)
-                return;
-
-            if (disposing)
-            {
-                _context.Dispose();
-            }
-            _disposed = true;
-
-            base.Dispose(disposing);
         }
     }
 }
