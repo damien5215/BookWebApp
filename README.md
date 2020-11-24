@@ -11,6 +11,7 @@ Adapting the project taught me more about Entity Framework 6, Connection Strings
 
 This web-app is not live at the moment but all of the code works as it should. To see how I built it please look at my dev blog - http://www.text.damienasp.com/007.html
 
+
 20/11/2020 - Added "base controller" and put database context and dispose code inside of base controller.
 
-??/??/2020 - Add repository for EF database queries and update controller.
+??/??/2020 - Add repository and move EF database queries from controller to repository.
