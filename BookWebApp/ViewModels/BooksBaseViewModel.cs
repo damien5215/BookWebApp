@@ -14,10 +14,10 @@ namespace BookWebApp.ViewModels
         public SelectList AuthorSelectListItems { get; set; }
 
         /// Initializes the view model.
-        public virtual void Init(Context context)
+        public virtual void Init(Repository repository)
         {
             AuthorSelectListItems = new SelectList(
-                context.Authors.OrderBy(s => s.Name).ToList(),
+                repository.GetAuthorList(),
                 "Id", "Name");
         }
     }

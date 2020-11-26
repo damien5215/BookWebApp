@@ -15,11 +15,7 @@ namespace BookWebApp.Controllers
     {
         public ActionResult Index()
         {
-            var books = Context.Books      
-                    .Include(b => b.Author)
-                    .OrderBy(b => b.Author.Name)
-                    .ToList();
-
+            var books = Repository.GetBooks();
             return View(books);
         }
 
@@ -30,12 +26,7 @@ namespace BookWebApp.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            var book = Context.Books
-                    .Include(b => b.Author)
-                    .Include(b => b.Genres.Select(c => c.Genre))
-                    .Include(b => b.Genres.Select(c => c.Fiction))
-                    .Where(b => b.Id == id)
-                    .SingleOrDefault();
+            var book = Repository.GetBook((int)id);
 
             if (book == null)
             {
@@ -50,7 +41,7 @@ namespace BookWebApp.Controllers
             var viewModel = new BooksAddViewModel();
 
             //Pass the Context class to the view model "Init" method.
-            viewModel.Init(Context);
+            viewModel.Init(Repository);
 
             return View(viewModel);
         }
@@ -60,8 +51,7 @@ namespace BookWebApp.Controllers
         {
             var book = viewModel.Book;
             book.AddGenre(viewModel.GenreId, viewModel.FictionId);
-            Context.Books.Add(book);
-            Context.SaveChanges();
+            Repository.AddBook(book);
 
             return RedirectToAction("Detail", new { id = book.Id });
         }
@@ -73,9 +63,7 @@ namespace BookWebApp.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            var book = Context.Books
-                .Where(cb => cb.Id == id)
-                .SingleOrDefault();
+            var book = Repository.GetBook((int)id);
 
             if (book == null)
             {
@@ -86,7 +74,7 @@ namespace BookWebApp.Controllers
             {
                 Book = book
             };
-            viewModel.Init(Context);
+            viewModel.Init(Repository);
 
             return View(viewModel);
         }
@@ -95,9 +83,7 @@ namespace BookWebApp.Controllers
         public ActionResult Edit(BooksEditViewModel viewModel)
         {
             var book = viewModel.Book;
-
-            Context.Entry(book).State = EntityState.Modified;
-            Context.SaveChanges();
+            Repository.EditBook(book);
 
             return RedirectToAction("Detail", new { id = book.Id });
         }
@@ -109,10 +95,7 @@ namespace BookWebApp.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            var book = Context.Books
-                .Include(cb => cb.Author)
-                .Where(cb => cb.Id == id)
-                .SingleOrDefault();
+            var book = Repository.GetBook((int)id);
 
             if (book == null)
             {
@@ -125,10 +108,7 @@ namespace BookWebApp.Controllers
         [HttpPost]
         public ActionResult Delete(int id)
         {
-            var book = new Book() { Id = id };
-            Context.Entry(book).State = EntityState.Deleted;
-            Context.SaveChanges();
-
+            Repository.DeleteBook(id);
             return RedirectToAction("Index");
         }
     }

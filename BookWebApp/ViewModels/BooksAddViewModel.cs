@@ -25,16 +25,16 @@ namespace BookWebApp.ViewModels
         }
 
         /// Initializes the view model.
-        public override void Init(Context context)
+        public override void Init(Repository repository)
         {
-            base.Init(context);
+            base.Init(repository);
 
             GenreSelectListItems = new SelectList(
-                context.Genres.OrderBy(a => a.GenreOfBook).ToList(),
+                repository.GetGenreList(),
                 "Id", "GenreOfBook");
 
             FictionSelectListItems = new SelectList(
-                context.Fictions.OrderBy(r => r.Name).ToList(),
+                repository.GetFictionList(),
                 "Id", "Name");
         }
     }
