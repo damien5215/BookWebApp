@@ -42,8 +42,6 @@ namespace BookShared.Data
                 .SingleOrDefault();
         }
 
-
-
         public IList<Genre> GetGenreList() 
         {
             return _context.Genres

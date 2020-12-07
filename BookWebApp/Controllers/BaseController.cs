@@ -12,7 +12,6 @@ namespace BookWebApp.Controllers
         private Context _context = null;
         private bool _disposed = false;
 
-        //protected Context Context { get; private set; }
         protected Repository Repository { get; private set; }
 
 
