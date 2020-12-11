@@ -13,6 +13,6 @@ This web-app is not live at the moment but all of the code works as it should. T
 
 
 
-20/11/2020 - Added "base controller" and put database context and dispose code inside of base controller.
+ [X] 20/11/2020 - Added "base controller" and put database context and dispose code inside of base controller.
 
-26/11/2020 - Add repository and move EF database queries from controller to repository.
+ [X] 26/11/2020 - Add repository and move EF database queries from controller to repository.
