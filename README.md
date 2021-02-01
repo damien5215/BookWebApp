@@ -71,9 +71,62 @@ Using the Code First workflow allows you to define and manipulate the data persi
 
 ---------------------------------------------------------------
 
+The "ProjectsV13" LocalDB instance is created specifically for SQL Server Data Tools and shouldn't be used for application development. "True".
+
+The "MSSQLLocalDB" LocalDB instance should be used for application development.
+
+MSSQLLocalDB is the LocalDB default instance name used by SQL Server 2014 and 2016 (versions 12 and 13 respectively).
+
+Which of the following commands will list the available LocalDB instances? "sqllocaldb info".
+
+Being able to list the available LocalDB instances is helpful when you need to debug Entity Framework database connection issues.
+
+Getting started with Entity Framework is expensive as you must purchase a commercial license for SQL Server. "False.
+
+Fortunately, we can target a free, developer-centric version of SQL Server named LocalDB, which is installed by default when you install Visual Studio Community.
+
+---------------------------------------------------------------
+
+When using the Code First workflow, adding a database connection string—whose name matches the name of our context class—to our app's configuration file allows us to customize the name of the generated database.
+
+Using this option makes it possible to change the location or name of the database without having to rewrite our code, which is especially helpful when deploying applications into other environments.
+
+During development, which of the following database initializer classes can be used to drop and create the database every time that a change to the model is made? "DropCreateDatabaseModelChanges".
+
+Since the database is dropped (i.e. deleted) before it's created again, this database initializer should not be used once an application has gone into production in order to prevent data loss.
+
+When using the Code First workflow, EF compiles a list of the entities and their properties, and for each property, characteristics such as its data type and nullability into the EDMX. "Conceptual Model".
+
+The Storage Model describes how data is stored in the database and the Conceptual-Storage Mappings describe how the Conceptual Model maps to the Storage Model.
+
+By default, when using the Code First workflow, the first time that we access one of the context's DbSet properties, EF will "check if the database exists, and it doesn't exist, it'll create it".
+
+By default, Entity Framework uses the CreateDatabaseIfNotExists database initializer.
+
+Visual Studio's SQL Server Object Explorer window can be used to view a SQL Server LocalDB database's tables and data.
+
+The SQL Server Object Explorer window also exposes a set of commands that allow you to create new databases and add tables to existing databases.
+
+When using the Code First workflow, EF adds every entity property as a table column. "False".
+
+EF only adds table columns for entity properties that have a setter—public, protected, or private.
+
+For the entity property public string Name { get; set; }, what SQL Server column data type would EF use for the table column? "nvarchar(MAX)"
+
+The "MAX" part within the parentheses indicates that the column can contain a string as large as the maximum allowed size—which is a very large string, 2GB or approximately a billion characters.
 
 
+When EF detects an existing database, it queries the EDMX from the "MigrationHistory" table and compares the current, in-memory model to the model stored in the database and throws an exception if they aren't compatible when using the default CreateDatabaseIfNotExists database initializer. "True"
 
+The DropCreateDatabaseAlways and DropCreateDatabaseIfModelChanges database initializers allow you to customize this behavior.
+
+During development, which of the following database initializer classes can be used to drop and create the database every time that a change to the model is made? "DropCreateDatabaseModelChanges".
+
+Since the database is dropped (i.e. deleted) before it's created again, this database initializer should not be used once an application has gone into production in order to prevent data loss.
+
+When EF creates your database, it includes a table named "MigrationHistory" that contains a compressed version of the EDMX for the model that was used to create the database.
+
+---------------------------------------------------------------
 
 
 
