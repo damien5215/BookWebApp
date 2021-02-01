@@ -15,7 +15,7 @@ This web-app is not live at the moment but all of the code works as it should. T
 - [x] 26/11/2020 - Add repository and move EF database queries from controller to repository.
 
 
-NOTES
+NOTES : Intro 1
 
 Entity Framework translates LINQ queries into the appropriate SQL statements, so that they can be executed against a database.
 
@@ -36,6 +36,8 @@ Databases that store data in tables are known as "Relational" databases.
 SQL Server is a relational database that is commonly used with EF.
 
 ---------------------------------------------------------------
+
+NOTES : Intro 2
 
 The context class contains a collection of "DbSet" properties, one property for each entity that you need to write queries for.
 
@@ -71,6 +73,8 @@ Using the Code First workflow allows you to define and manipulate the data persi
 
 ---------------------------------------------------------------
 
+NOTES: Entity Framework and Databases 1
+
 The "ProjectsV13" LocalDB instance is created specifically for SQL Server Data Tools and shouldn't be used for application development. "True".
 
 The "MSSQLLocalDB" LocalDB instance should be used for application development.
@@ -86,6 +90,8 @@ Getting started with Entity Framework is expensive as you must purchase a commer
 Fortunately, we can target a free, developer-centric version of SQL Server named LocalDB, which is installed by default when you install Visual Studio Community.
 
 ---------------------------------------------------------------
+
+NOTES: Entity Framework and Databases 2
 
 When using the Code First workflow, adding a database connection string—whose name matches the name of our context class—to our app's configuration file allows us to customize the name of the generated database.
 
@@ -115,7 +121,6 @@ For the entity property public string Name { get; set; }, what SQL Server column
 
 The "MAX" part within the parentheses indicates that the column can contain a string as large as the maximum allowed size—which is a very large string, 2GB or approximately a billion characters.
 
-
 When EF detects an existing database, it queries the EDMX from the "MigrationHistory" table and compares the current, in-memory model to the model stored in the database and throws an exception if they aren't compatible when using the default CreateDatabaseIfNotExists database initializer. "True"
 
 The DropCreateDatabaseAlways and DropCreateDatabaseIfModelChanges database initializers allow you to customize this behavior.
@@ -127,6 +132,54 @@ Since the database is dropped (i.e. deleted) before it's created again, this dat
 When EF creates your database, it includes a table named "MigrationHistory" that contains a compressed version of the EDMX for the model that was used to create the database.
 
 ---------------------------------------------------------------
+
+NOTES: Entity Data Model
+
+When an instance of entity "A" can be associated with one or more instances of entity "B" and an instance of entity "B" can also be associated with one or more instances of entity "A", those entities are said to be in a "Many-to-Many" relationship.
+
+Representing a Many-to-Many relationship in the database requires either an implicit or explicit bridge table.
+
+When defining a many-to-many relationship without defining an explicit bridge entity class, Entity Framework will automatically add an "implicit" bridge table to the database in order to store the relationship data.
+
+Defining an explicit Many-to-Many bridge entity class allows you to include additional properties beyond the properties that are needed to define the relationship. "True"
+
+These additional properties are often referred to as "payload".
+
+The Required data annotation attribute can be used on nullable entity properties to make their associated database table columns not allow nulls.
+
+The Include method can be used in a LINQ query to load related data. "True". 
+
+Using the Include method to load related data is known as "eager" loading.
+
+"Navigation" properties allow you to define relationships between entities.
+
+"Seeding" your database is the process of initially populating your database with data.
+
+Sometimes the seed data is fake or dummy data that enables the development or testing of the system; sometimes it's data that needs to be present in order for the system to operate correctly.
+
+You can override the DbContext class "OnModelCreating" method in order to customize EF's conventions or use EF's fluent API to refine your model.
+
+It's possible to rely completely upon the fluent API to refine your model and not use any data annotation attributes in your entity classes.
+
+---------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
