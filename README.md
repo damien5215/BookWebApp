@@ -169,6 +169,84 @@ The behavior of LINQ to Entities queries not executing until they're enumeratedâ
 
 Deferred execution allows queries to be executed more than once or to be combined or extended before they're executed.
 
+The DbSet "Find" method will check if the entity is being tracked by the context, and if it is, return a reference to that entity, otherwise it'll retrieve the entity from the database.
+
+Whereas a DbSet LINQ query will always cause EF to generate and execute a SQL query against the database, the DbSet Find will only result in a database query if the entity is not being tracked by the context.
+
+The SingleOrDefault LINQ operator will throw an exception if more than one entity is found whereas the FirstOrDefault operator returns the first entity if more than one is found. "True".
+
+The Single and First LINQ operators go a step further and enforce that at least one entity is found by throwing an exception if no matching entities are found.
+
+When "explicitly" loading entities, related entities are loaded using the Load method on the related entity's entry.
+
+As with lazy loading, this approach allows you to only load the related entities if or when they're needed.
+
+When "eagerly" loading related entities, you write a single query that not only retrieves the data for the main entity but also the data for the related entities.
+
+When eagerly loading related entities, the Include method is used to tell EF which related entities to load.
+
+When "lazily" loading related entities, related entities are not loaded until their navigation properties are accessed for the first time.
+
+The process of lazily loading related entities is automatically handled by EF using dynamic proxies, which makes this option for loading related data easy to use. The downside is that multiple queries are needed in order to retrieve the data.
+
+A DbSet query to retrieve a single entity will only result in a query being generated and executed against the database if the entity isn't available in the context. "false".
+
+The query will be generated and executed against the database even if the entity is already in the context.
+
+To enable lazy loading, navigation properties need to be marked as "virtual", which allows EF to create dynamic proxies by subclassing your entities and overriding your navigation properties.
+
+The overridden navigation properties give EF the ability to detect when those properties are accessed, and retrieve the data for those properties when it is needed.
+
+If you need to sort on more than one column in a LINQ query, you can make multiple calls to the OrderBy or OrderByDescending methods. "false".
+
+Unlike the Where operator, only the last call to the OrderBy or OrderByDescending methods will be used.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
