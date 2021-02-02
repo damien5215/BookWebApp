@@ -163,8 +163,11 @@ It's possible to rely completely upon the fluent API to refine your model and no
 
 ---------------------------------------------------------------
 
+NOTES: LINQ Queries
 
+The behavior of LINQ to Entities queries not executing until they're enumerated—either by using a loop or by calling a method on the query like ToList or Count—is called "Deferred Execution".
 
+Deferred execution allows queries to be executed more than once or to be combined or extended before they're executed.
 
 
 
