@@ -14,8 +14,9 @@ This web-app is not live at the moment but all of the code works as it should. T
 - [x] 20/11/2020 - Added "base controller" and put database context and dispose code inside of base controller.
 - [x] 26/11/2020 - Add repository and move EF database queries from controller to repository.
 
+---------------------------------------------------------------
 
-NOTES : Intro 1
+**NOTES : Intro 1**
 
 Entity Framework translates LINQ queries into the appropriate SQL statements, so that they can be executed against a database.
 
@@ -37,7 +38,7 @@ SQL Server is a relational database that is commonly used with EF.
 
 ---------------------------------------------------------------
 
-NOTES : Intro 2
+**NOTES : Intro 2**
 
 The context class contains a collection of "DbSet" properties, one property for each entity that you need to write queries for.
 
@@ -73,7 +74,7 @@ Using the Code First workflow allows you to define and manipulate the data persi
 
 ---------------------------------------------------------------
 
-NOTES: Entity Framework and Databases 1
+**NOTES: Entity Framework and Databases 1**
 
 The "ProjectsV13" LocalDB instance is created specifically for SQL Server Data Tools and shouldn't be used for application development. "True".
 
@@ -91,7 +92,7 @@ Fortunately, we can target a free, developer-centric version of SQL Server named
 
 ---------------------------------------------------------------
 
-NOTES: Entity Framework and Databases 2
+**NOTES: Entity Framework and Databases 2**
 
 When using the Code First workflow, adding a database connection string—whose name matches the name of our context class—to our app's configuration file allows us to customize the name of the generated database.
 
@@ -133,7 +134,7 @@ When EF creates your database, it includes a table named "MigrationHistory" that
 
 ---------------------------------------------------------------
 
-NOTES: Entity Data Model
+**NOTES: Entity Data Model**
 
 When an instance of entity "A" can be associated with one or more instances of entity "B" and an instance of entity "B" can also be associated with one or more instances of entity "A", those entities are said to be in a "Many-to-Many" relationship.
 
@@ -163,7 +164,7 @@ It's possible to rely completely upon the fluent API to refine your model and no
 
 ---------------------------------------------------------------
 
-NOTES: LINQ Queries
+**NOTES: LINQ Queries**
 
 The behavior of LINQ to Entities queries not executing until they're enumerated—either by using a loop or by calling a method on the query like ToList or Count—is called "Deferred Execution".
 
@@ -203,7 +204,7 @@ Unlike the Where operator, only the last call to the OrderBy or OrderByDescendin
 
 ---------------------------------------------------------------
 
-NOTES: CRUD Operations
+**NOTES: CRUD Operations**
 
 Adding an entity to the context by calling the DbSet "Add" method will set the entity's state to "Added".
 
