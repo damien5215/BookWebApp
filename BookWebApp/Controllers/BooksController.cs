@@ -49,6 +49,8 @@ namespace BookWebApp.Controllers
         [HttpPost]
         public ActionResult Add(BooksAddViewModel viewModel)
         {
+            //ValidateBook(viewModel.Book);
+
             var book = viewModel.Book;
             book.AddGenre(viewModel.GenreId, viewModel.FictionId);
             Repository.AddBook(book);
@@ -111,5 +113,21 @@ namespace BookWebApp.Controllers
             Repository.DeleteBook(id);
             return RedirectToAction("Index");
         }
+
+        //private void ValidateBook(Book book)
+        //{
+        //    // If there aren't any "SeriesId" and "IssueNumber" field validation errors...
+        //    if (ModelState.IsValidField("ComicBook.SeriesId") &&
+        //        ModelState.IsValidField("ComicBook.IssueNumber"))
+        //    {
+        //        // Then make sure that the provided issue number is unique for the provided series.
+        //        if (_comicBooksRepository.ComicBookSeriesHasIssueNumber(
+        //                comicBook.Id, comicBook.SeriesId, comicBook.IssueNumber))
+        //        {
+        //            ModelState.AddModelError("ComicBook.IssueNumber",
+        //                "The provided Issue Number has already been entered for the selected Series.");
+        //        }
+        //    }
+        //}
     }
 }
