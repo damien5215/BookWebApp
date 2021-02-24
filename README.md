@@ -17,6 +17,10 @@ This web-app is not live at the moment but all of the code works as it should. T
 
 ---------------------------------------------------------------
 
+![alt text](http://www.text.damienasp.com/images5/webapp07b.png)
+
+---------------------------------------------------------------
+
 **NOTES : Intro 1**
 
 Entity Framework translates LINQ queries into the appropriate SQL statements, so that they can be executed against a database.
