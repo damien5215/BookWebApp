@@ -146,6 +146,7 @@
     <Content Include="Views\Books\_BookForm.cshtml" />
     <Content Include="Views\Books\Edit.cshtml" />
     <Content Include="Views\Books\Delete.cshtml" />
+    <Content Include="Views\Books\Home.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
