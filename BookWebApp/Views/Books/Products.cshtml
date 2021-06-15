@@ -1,0 +1,17 @@
+﻿@model List<BookShared.Models.Book>
+
+@{
+    ViewBag.Title = "Products";
+}
+
+<h2>Products</h2>
+
+<div>
+
+    @foreach (var book in Model)
+    {
+        <p>@book.Author.Name - @book.Title</p>
+        @*<p>@book.Title</p>*@
+    }
+
+</div>
