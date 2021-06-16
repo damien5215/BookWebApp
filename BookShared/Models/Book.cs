@@ -16,7 +16,8 @@ namespace BookShared.Models
         public int AuthorId { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
-        //public string test { get; set; } // delete
+        public string Img { get; set; }             // 16/06/2021 Added Property
+
 
         public Author Author { get; set; }
         public ICollection<BookGenre> Genres { get; set; }
