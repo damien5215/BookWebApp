@@ -140,13 +140,38 @@ namespace BookWebApp.Controllers
 
         public ActionResult Products()
         {
-            var books = Repository.GetBooks();
+            var books = Repository.GetProducts();
             return View(books);
+        }
+
+        //FOR TESTING ONLY
+        public ActionResult Products2()    
+        {
+            var bookGenres = Repository.GetBookGenres();
+            return View(bookGenres);
         }
 
         public ActionResult Links()
         {
             return View();
+        }
+
+        public ActionResult Test()
+        {
+            var viewModel = new TestViewModel();
+
+            //Pass the Context class to the view model "Init" method.
+            viewModel.Init(Repository);
+
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        public ActionResult Test(TestViewModel viewModel)
+        {
+            int id = viewModel.GenreId;
+
+            return View(viewModel);
         }
     }
 }

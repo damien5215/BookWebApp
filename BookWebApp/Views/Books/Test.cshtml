@@ -1,0 +1,19 @@
+﻿@model BookWebApp.ViewModels.TestViewModel
+
+
+@{
+    ViewBag.Title = "Test";
+}
+
+<h2>Test</h2>
+
+@using (Html.BeginForm())
+{
+    <h3>Main Information</h3>
+
+    @Html.DropDownListFor(m => m.GenreId,
+                    Model.GenreSelectListItems, "", new { @class = "form-control" })
+
+
+}
+
