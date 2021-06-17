@@ -9,14 +9,14 @@
 <div>
 
     @*@foreach (var book in Model)
-    {
-        <p>
-            @book.Author.Name - @book.Title - @book.Img
+        {
+            <p>
+                @book.Author.Name - @book.Title - @book.Img
 
-            <img src="@book.Img" width="100" height="160">
+                <img src="@book.Img" width="100" height="160">
 
-        </p>
-    }*@
+            </p>
+        }*@
 
     @foreach (var book in Model)
     {
@@ -30,11 +30,19 @@
                     <p>@book.Author.Name</p>
                     <p>@book.Title</p>
                     <p>@book.Description</p>
-                    @*<p>@book.Genres</p>*@
+
+                    @*@foreach (var genre in Model.Genres)
+                    {
+                        <p>@genre.Genres.</p>
+
+                    }*@
+
+                    @*<p>@book.Genres.</p>*@
                 </div>
             </div>
             @*<br><hr>*@
         </div>
     }
+
 
 </div>
