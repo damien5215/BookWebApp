@@ -34,12 +34,24 @@ namespace BookShared.Data
                     .ToList();
         }
 
-        public IList<BookGenre> GetBookGenres()     // FOR TESTING
+        // FOR TESTING
+        public IList<BookGenre> GetBookGenres()   
         {
             return _context.BookGenres
                     .Include(b => b.Genre)
                     .Include(b => b.Book)
                     .Include(b => b.Book.Author)
+                    .ToList();
+        }
+
+        // FOR TESTING
+        public IList<BookGenre> GetBookGenres2(int id)
+        {
+            return _context.BookGenres
+                    .Include(b => b.Genre)
+                    .Include(b => b.Book)
+                    .Include(b => b.Book.Author)
+                    .Where(b => b.Genre.Id == id)
                     .ToList();
         }
 

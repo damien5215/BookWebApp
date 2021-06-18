@@ -9,10 +9,15 @@
 
 @using (Html.BeginForm())
 {
-    <h3>Main Information</h3>
+    @*<h3>Main Information</h3>*@
 
     @Html.DropDownListFor(m => m.GenreId,
-                    Model.GenreSelectListItems, "", new { @class = "form-control" })
+                    Model.GenreSelectListItems, "",
+                    new { @class = "form-control" })
+
+    <button type="submit" class="btn btn-success btn-lg margin-right">
+        <span class="glyphicon glyphicon-save"></span> Save
+    </button>
 
 
 }

@@ -132,10 +132,7 @@ namespace BookWebApp.Controllers
         
         public ActionResult Home()
         {
-            //var books = Repository.GetBooks();
-            //return View(books);
             return View();
-
         }
 
         public ActionResult Products()
@@ -171,7 +168,12 @@ namespace BookWebApp.Controllers
         {
             int id = viewModel.GenreId;
 
-            return View(viewModel);
+            var bookGenres = Repository.GetBookGenres2(id);
+
+            // Don't know how to send this to Products2 view!
+
+            return RedirectToAction("Products2");
+            //return View(Products);
         }
     }
 }
