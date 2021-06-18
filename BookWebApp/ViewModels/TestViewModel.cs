@@ -28,7 +28,7 @@ namespace BookWebApp.ViewModels
             GenreSelectListItems = new SelectList(
                 repository.GetGenreList(),
                 "Id", "GenreOfBook");
-            
+
         }
 
     }

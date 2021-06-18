@@ -16,7 +16,9 @@ namespace BookShared.Models
         public int AuthorId { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
-        public string Img { get; set; }             // 16/06/2021 Added Property
+        public string Img { get; set; }
+
+        public decimal Price { get; set; }       // new
 
 
         public Author Author { get; set; }
