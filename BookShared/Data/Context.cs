@@ -19,5 +19,7 @@ namespace BookShared.Data
         public DbSet<Genre> Genres { get; set; }
         public DbSet<Fiction> Fictions { get; set; }
         public DbSet<Author> Authors { get; set; }
+        public DbSet<Cart> Carts { get; set; }
+
     }
 }

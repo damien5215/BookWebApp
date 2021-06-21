@@ -4,7 +4,7 @@
     ViewBag.Title = "Products";
 }
 
-<h2>Products</h2>
+@*<h2>Products</h2>
 
 <div>
 
@@ -17,6 +17,7 @@
                     <img src="@book.Img" width="100" height="160">
                 </div>
                 <div class="col-md-2">
+                    <p>ADD TO CART</p>
                     <p>Author</p>
                     <p>Title</p>
                     <p>Genre</p>
@@ -25,6 +26,7 @@
 
                 </div>
                 <div class="col-md-8">
+                    <p>@Html.ActionLink("ADD", "Add", "Cart", new { id = book.Id }, new { @style = "color:blue;" })</p>
                     <p>@book.Author.Name</p>
                     <p>@book.Title</p>
 
@@ -43,5 +45,66 @@
             </div>
         </div>
     }
+
+</div>*@
+
+<div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+
+                <h2>Products</h2>
+
+                @foreach (var book in Model)
+                {
+                    <div class="container" id="productRecord">
+                        <br>@*<hr>*@<br>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <img src="@book.Img" width="100" height="160">
+                            </div>
+                            <div class="col-md-2">
+                                <p>ADD TO CART</p>
+                                <p>Author</p>
+                                <p>Title</p>
+                                <p>Genre</p>
+                                <p>Price</p>
+                                <p>Description</p>
+                            </div>
+                            <div class="col-md-2">
+                                <p>@Html.ActionLink("ADD", "Add", "Cart", new { id = book.Id }, new { @style = "color:blue;" })</p>
+                                <p>@book.Author.Name</p>
+                                <p>@book.Title</p>
+
+                                <p>
+                                    @foreach (var genre in book.Genres)
+                                    {
+                                        @genre.Genre.GenreOfBook
+                                        <text> </text>
+                                    }
+                                </p>
+
+                                <p>@book.Price</p>
+                                <p>@book.Description</p>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            </div>
+
+            <div class="col-md-6">
+                <h2>Cart</h2>
+                @{Html.RenderAction("_Cart2", "Cart");}
+            </div>
+            
+        </div>
+    </div>
+
+
+
+
+
 
 </div>

@@ -35,6 +35,26 @@ namespace BookShared.Data
         }
 
         // FOR TESTING
+        public IList<Cart> GetCart()
+        {
+            return _context.Carts
+                    .Include(b => b.Book)
+                    .Include(b => b.Book.Author)
+                    .ToList();
+        }
+
+        // FOR TESTING
+        public Cart GetCartCheck(int id)       // do you want a "cart" or a "book" object?
+        {
+            return _context.Carts
+                    .Include(b => b.Book)
+                    .Include(b => b.Book.Author)
+                    .Where(b => b.BookId == id)
+                    .SingleOrDefault();
+                    //.ToList();
+        }
+
+        // FOR TESTING
         public IList<BookGenre> GetBookGenres()   
         {
             return _context.BookGenres
@@ -99,9 +119,21 @@ namespace BookShared.Data
             _context.SaveChanges();
         }
 
+        public void AddCart(Cart cart)
+        {
+            _context.Carts.Add(cart);
+            _context.SaveChanges();
+        }
+
         public void EditBook(Book book)
         {
             _context.Entry(book).State = EntityState.Modified;
+            _context.SaveChanges();
+        }
+
+        public void EditCart(Cart cart)
+        {
+            _context.Entry(cart).State = EntityState.Modified;
             _context.SaveChanges();
         }
 
@@ -109,6 +141,13 @@ namespace BookShared.Data
         {
             var book = new Book() { Id = id };
             _context.Entry(book).State = EntityState.Deleted;
+            _context.SaveChanges();
+        }
+
+        public void DeleteCart(int id)
+        {
+            var cart = new Cart() { Id = id };
+            _context.Entry(cart).State = EntityState.Deleted;
             _context.SaveChanges();
         }
     }
