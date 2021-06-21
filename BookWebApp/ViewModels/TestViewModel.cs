@@ -14,6 +14,10 @@ namespace BookWebApp.ViewModels
         [Display(Name = "Genre")]
         public int GenreId { get; set; }
 
+        public IList<BookGenre> BookGenreList { get; set; }
+        public IList<Book> BookList { get; set; }
+
+
         public SelectList GenreSelectListItems { get; set; }
 
         public TestViewModel()

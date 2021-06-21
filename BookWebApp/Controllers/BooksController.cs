@@ -157,7 +157,10 @@ namespace BookWebApp.Controllers
         {
             var viewModel = new TestViewModel();
 
-            //Pass the Context class to the view model "Init" method.
+            viewModel.BookGenreList = Repository.GetBookGenres();
+            //viewModel.BookList = Repository.GetBooks();
+
+
             viewModel.Init(Repository);
 
             return View(viewModel);
@@ -168,12 +171,31 @@ namespace BookWebApp.Controllers
         {
             int id = viewModel.GenreId;
 
-            var bookGenres = Repository.GetBookGenres2(id);
+            //var bookGenres = Repository.GetBookGenres2(id);
+
+            viewModel.BookGenreList = Repository.GetBookGenres2(id);
+
+            viewModel.Init(Repository);
+
 
             // Don't know how to send this to Products2 view!
 
-            return RedirectToAction("Products2");
-            //return View(Products);
+            //return RedirectToAction("Products2");
+            return View(viewModel);
         }
+
+        public ActionResult TestProducts()
+        {
+            var viewModel = new TestViewModel();
+
+            //viewModel.BookGenreList = Repository.GetBookGenres();
+            viewModel.BookList = Repository.GetProducts();
+
+
+            viewModel.Init(Repository);
+
+            return View(viewModel);
+        }
+
     }
 }
