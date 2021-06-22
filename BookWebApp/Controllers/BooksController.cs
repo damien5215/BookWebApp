@@ -171,12 +171,9 @@ namespace BookWebApp.Controllers
         {
             int id = viewModel.GenreId;
 
-            //var bookGenres = Repository.GetBookGenres2(id);
-
             viewModel.BookGenreList = Repository.GetBookGenres2(id);
 
             viewModel.Init(Repository);
-
 
             // Don't know how to send this to Products2 view!
 
