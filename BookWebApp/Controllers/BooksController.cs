@@ -190,16 +190,5 @@ namespace BookWebApp.Controllers
 
             return View(viewModel);
         }
-
-        public ActionResult TestProducts()
-        {
-            var viewModel = new TestViewModel();
-
-            viewModel.BookList = Repository.GetProducts();
-            viewModel.Init(Repository);
-
-            return View(viewModel);
-        }
-
     }
 }

@@ -51,7 +51,16 @@ namespace BookShared.Data
                     .Include(b => b.Book.Author)
                     .Where(b => b.BookId == id)
                     .SingleOrDefault();
-                    //.ToList();
+        }
+
+        public Cart GetCartCheckDelete(int id)
+        {
+            return _context.Carts
+                    .Include(b => b.Book)
+                    .Include(b => b.Book.Author)
+                    .AsNoTracking()
+                    .Where(b => b.Id == id)
+                    .SingleOrDefault();
         }
 
         // FOR TESTING
@@ -79,9 +88,7 @@ namespace BookShared.Data
         public IList<Book> GetFilteredBooks(int authorID)
         {
             return _context.Books
-                    //.Include(b => b.Genre)
                     .Include(b => b.Genres.Select(c => c.Genre))
-                    //.Include(b => b.Book)
                     .Include(b => b.Author)
                     .Where(b => b.Author.Id == authorID)
                     .ToList();

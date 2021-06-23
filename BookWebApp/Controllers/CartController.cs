@@ -25,6 +25,21 @@ namespace BookWebApp.Controllers
             return View(books);
         }
 
+        public ActionResult _TotalCost()
+        {
+            var books = Repository.GetCart();
+
+            decimal x1 = 0M;
+
+            foreach (var item in books)
+            {
+                x1 += (item.Quantity * item.Book.Price);
+            }
+            ViewBag.TotPrice = x1;
+
+            return View();
+        }
+
         public ActionResult Add(int? id) 
         {
             var book = Repository.GetBook((int)id);
@@ -39,7 +54,7 @@ namespace BookWebApp.Controllers
                     Book = book,
                     Quantity = 1
                 };
-
+                
                 Repository.AddCart(cart1);
 
                 return RedirectToAction("Products2", "Books");
@@ -54,17 +69,27 @@ namespace BookWebApp.Controllers
 
         public ActionResult Delete(int id)
         {
-            Repository.DeleteCart(id);
-            
-            return RedirectToAction("Products2", "Books");
+            var cart = Repository.GetCartCheckDelete(id);
+
+            if (cart.Quantity > 1)
+            {
+                cart.Quantity--;
+                Repository.EditCart(cart);
+                return RedirectToAction("Products2", "Books");
+
+            }
+            else 
+            {
+                Repository.DeleteCart(id);
+                return RedirectToAction("Products2", "Books");
+            }
         }
 
-        public ActionResult Test() 
-        {
-            var book = Repository.GetBooks();
-            ViewBag.TotalBooks = book.Count;
+        //public ActionResult Delete(int id)
+        //{
+        //    Repository.DeleteCart(id);
 
-            return View();
-        }
+        //    return RedirectToAction("Products2", "Books");
+        //}
     }
 }
