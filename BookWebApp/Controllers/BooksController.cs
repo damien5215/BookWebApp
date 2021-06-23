@@ -144,8 +144,19 @@ namespace BookWebApp.Controllers
         //FOR TESTING ONLY
         public ActionResult Products2()    
         {
-            var bookGenres = Repository.GetBookGenres();
-            return View(bookGenres);
+            //var bookGenres = Repository.GetBookGenres();
+            //var bookGenres = Repository.GetProducts();
+
+            var viewModel = new ProductsViewModel();
+
+            viewModel.AuthorList = Repository.GetAuthorList();
+            //viewModel.BookList = Repository.GetBooks();
+            viewModel.BookList = Repository.GetProducts();
+
+            viewModel.Init(Repository);
+
+            //return View(bookGenres);
+            return View(viewModel);
         }
 
         public ActionResult Links()

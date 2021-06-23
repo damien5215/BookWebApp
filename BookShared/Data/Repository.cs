@@ -44,7 +44,7 @@ namespace BookShared.Data
         }
 
         // FOR TESTING
-        public Cart GetCartCheck(int id)       // do you want a "cart" or a "book" object?
+        public Cart GetCartCheck(int id)  
         {
             return _context.Carts
                     .Include(b => b.Book)
