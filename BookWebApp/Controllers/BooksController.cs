@@ -138,26 +138,32 @@ namespace BookWebApp.Controllers
         public ActionResult Products()
         {
             var books = Repository.GetProducts();
+
             return View(books);
         }
 
-        //FOR TESTING ONLY
         public ActionResult Products2()    
         {
-            //var bookGenres = Repository.GetBookGenres();
-            //var bookGenres = Repository.GetProducts();
-
             var viewModel = new ProductsViewModel();
 
             viewModel.AuthorList = Repository.GetAuthorList();
-            //viewModel.BookList = Repository.GetBooks();
             viewModel.BookList = Repository.GetProducts();
-
             viewModel.Init(Repository);
 
-            //return View(bookGenres);
             return View(viewModel);
         }
+
+        [HttpPost]
+        public ActionResult Products2(ProductsViewModel viewModel)
+        {
+            int authorID = viewModel.AuthorId;
+
+            viewModel.BookList = Repository.GetFilteredBooks(authorID);
+            viewModel.Init(Repository);
+
+            return View(viewModel);
+        }
+
 
         public ActionResult Links()
         {
@@ -169,9 +175,6 @@ namespace BookWebApp.Controllers
             var viewModel = new TestViewModel();
 
             viewModel.BookGenreList = Repository.GetBookGenres();
-            //viewModel.BookList = Repository.GetBooks();
-
-
             viewModel.Init(Repository);
 
             return View(viewModel);
@@ -183,12 +186,8 @@ namespace BookWebApp.Controllers
             int id = viewModel.GenreId;
 
             viewModel.BookGenreList = Repository.GetBookGenres2(id);
-
             viewModel.Init(Repository);
 
-            // Don't know how to send this to Products2 view!
-
-            //return RedirectToAction("Products2");
             return View(viewModel);
         }
 
@@ -196,10 +195,7 @@ namespace BookWebApp.Controllers
         {
             var viewModel = new TestViewModel();
 
-            //viewModel.BookGenreList = Repository.GetBookGenres();
             viewModel.BookList = Repository.GetProducts();
-
-
             viewModel.Init(Repository);
 
             return View(viewModel);

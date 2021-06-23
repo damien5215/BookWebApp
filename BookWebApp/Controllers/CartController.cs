@@ -19,7 +19,6 @@ namespace BookWebApp.Controllers
             return View(books);
         }
 
-        //Parital View
         public ActionResult _Cart2()
         {
             var books = Repository.GetCart();
@@ -43,15 +42,13 @@ namespace BookWebApp.Controllers
 
                 Repository.AddCart(cart1);
 
-                //return RedirectToAction("Cart");
-                return RedirectToAction("Products", "Books");
+                return RedirectToAction("Products2", "Books");
             }
             else
             {
                 cart.Quantity++;
                 Repository.EditCart(cart);
-                //return RedirectToAction("Cart");
-                return RedirectToAction("Products", "Books");
+                return RedirectToAction("Products2", "Books");
             }
         }
 
@@ -59,14 +56,12 @@ namespace BookWebApp.Controllers
         {
             Repository.DeleteCart(id);
             
-            //return RedirectToAction("Cart");
-            return RedirectToAction("Products", "Books");
+            return RedirectToAction("Products2", "Books");
         }
 
         public ActionResult Test() 
         {
             var book = Repository.GetBooks();
-            
             ViewBag.TotalBooks = book.Count;
 
             return View();

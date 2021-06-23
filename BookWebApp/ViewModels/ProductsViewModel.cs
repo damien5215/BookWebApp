@@ -14,7 +14,7 @@ namespace BookWebApp.ViewModels
         //[Display(Name = "Genre")]
         //public int GenreId { get; set; }
 
-        public string AuthorName { get; set; }
+        public int AuthorId { get; set; }
 
         //public IList<BookGenre> BookGenreList { get; set; }
         public IList<Book> BookList { get; set; }

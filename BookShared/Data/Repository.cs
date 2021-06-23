@@ -34,7 +34,7 @@ namespace BookShared.Data
                     .ToList();
         }
 
-        // FOR TESTING
+        // Cart/Cart, Cart/_Cart2 and Cart/Add
         public IList<Cart> GetCart()
         {
             return _context.Carts
@@ -72,6 +72,18 @@ namespace BookShared.Data
                     .Include(b => b.Book)
                     .Include(b => b.Book.Author)
                     .Where(b => b.Genre.Id == id)
+                    .ToList();
+        }
+
+        //Books/Products2 (POST)
+        public IList<Book> GetFilteredBooks(int authorID)
+        {
+            return _context.Books
+                    //.Include(b => b.Genre)
+                    .Include(b => b.Genres.Select(c => c.Genre))
+                    //.Include(b => b.Book)
+                    .Include(b => b.Author)
+                    .Where(b => b.Author.Id == authorID)
                     .ToList();
         }
 
