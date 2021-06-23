@@ -13,13 +13,13 @@ namespace BookWebApp.Controllers
 {
     public class CartController : BaseController
     {
-        public ActionResult Cart()
-        {
-            var books = Repository.GetCart();
-            return View(books);
-        }
+        //public ActionResult Cart()
+        //{
+        //    var books = Repository.GetCart();
+        //    return View(books);
+        //}
 
-        public ActionResult _Cart2()
+        public ActionResult _Cart()
         {
             var books = Repository.GetCart();
             return View(books);
@@ -57,13 +57,13 @@ namespace BookWebApp.Controllers
                 
                 Repository.AddCart(cart1);
 
-                return RedirectToAction("Products2", "Books");
+                return RedirectToAction("Products", "Books");
             }
             else
             {
                 cart.Quantity++;
                 Repository.EditCart(cart);
-                return RedirectToAction("Products2", "Books");
+                return RedirectToAction("Products", "Books");
             }
         }
 
@@ -75,13 +75,12 @@ namespace BookWebApp.Controllers
             {
                 cart.Quantity--;
                 Repository.EditCart(cart);
-                return RedirectToAction("Products2", "Books");
-
+                return RedirectToAction("Products", "Books");
             }
             else 
             {
                 Repository.DeleteCart(id);
-                return RedirectToAction("Products2", "Books");
+                return RedirectToAction("Products", "Books");
             }
         }
 

@@ -135,14 +135,14 @@ namespace BookWebApp.Controllers
             return View();
         }
 
-        public ActionResult Products()
-        {
-            var books = Repository.GetProducts();
+        //public ActionResult Products()
+        //{
+        //    var books = Repository.GetProducts();
 
-            return View(books);
-        }
+        //    return View(books);
+        //}
 
-        public ActionResult Products2()    
+        public ActionResult Products()    
         {
             var viewModel = new ProductsViewModel();
 
@@ -154,7 +154,7 @@ namespace BookWebApp.Controllers
         }
 
         [HttpPost]
-        public ActionResult Products2(ProductsViewModel viewModel)
+        public ActionResult Products(ProductsViewModel viewModel)
         {
             int authorID = viewModel.AuthorId;
 
