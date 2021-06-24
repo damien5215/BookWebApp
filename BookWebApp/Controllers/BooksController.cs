@@ -135,12 +135,6 @@ namespace BookWebApp.Controllers
             return View();
         }
 
-        //public ActionResult Products()
-        //{
-        //    var books = Repository.GetProducts();
-
-        //    return View(books);
-        //}
 
         public ActionResult Products()    
         {

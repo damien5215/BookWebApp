@@ -13,12 +13,6 @@ namespace BookWebApp.Controllers
 {
     public class CartController : BaseController
     {
-        //public ActionResult Cart()
-        //{
-        //    var books = Repository.GetCart();
-        //    return View(books);
-        //}
-
         public ActionResult _Cart()
         {
             var books = Repository.GetCart();
@@ -58,12 +52,16 @@ namespace BookWebApp.Controllers
                 Repository.AddCart(cart1);
 
                 return RedirectToAction("Products", "Books");
+                //return PartialView("_Cart", cartList);
+
             }
             else
             {
                 cart.Quantity++;
                 Repository.EditCart(cart);
                 return RedirectToAction("Products", "Books");
+                //var cartList2 = Repository.GetCart();
+                //return PartialView("_Cart", cartList2);
             }
         }
 
