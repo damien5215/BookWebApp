@@ -126,6 +126,7 @@
     <Compile Include="ViewModels\BooksAddViewModel.cs" />
     <Compile Include="ViewModels\BooksBaseViewModel.cs" />
     <Compile Include="ViewModels\BooksEditViewModel.cs" />
+    <Compile Include="ViewModels\TotalCostModel.cs" />
     <Compile Include="ViewModels\TestViewModel.cs" />
     <Compile Include="ViewModels\ProductsViewModel.cs" />
   </ItemGroup>

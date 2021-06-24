@@ -21,17 +21,18 @@ namespace BookWebApp.Controllers
 
         public ActionResult _TotalCost()
         {
-            var books = Repository.GetCart();
+            var cartBooks = Repository.GetCart();
 
             decimal x1 = 0M;
 
-            foreach (var item in books)
+            foreach (var item in cartBooks)
             {
                 x1 += (item.Quantity * item.Book.Price);
             }
-            ViewBag.TotPrice = x1;
 
-            return View();
+            var viewModel = new TotalCostViewModel(x1);
+
+            return View(viewModel);
         }
 
         public ActionResult Add(int? id) 
