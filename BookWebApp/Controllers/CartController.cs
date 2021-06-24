@@ -88,5 +88,10 @@ namespace BookWebApp.Controllers
 
         //    return RedirectToAction("Products2", "Books");
         //}
+
+        public ActionResult Test()
+        {
+            return View();
+        }
     }
 }
