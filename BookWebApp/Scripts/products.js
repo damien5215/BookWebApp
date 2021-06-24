@@ -10,7 +10,7 @@
     //    console.log("Tuna Set!");
     //})
 
-    $('.button_action').click(function (index) {
+    $('.testClass').click(function (index) {
         console.log("Button Clicked!");
 
         $.ajax({
@@ -20,7 +20,8 @@
             success: function (result) {
 
                 //$('#showEditProd').html(result);
-                $("#cartDiv").load();
+                //$("#cartDiv").load();
+                $("#cartDiv").load("https://localhost:44307/Cart/_Cart");
                 console.log("AJAX Sucess!");
             }
         });

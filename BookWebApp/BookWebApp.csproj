@@ -111,7 +111,6 @@
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Scripts\test.js" />
     <Content Include="Scripts\products.js" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -152,14 +151,11 @@
     <Content Include="Views\Books\Edit.cshtml" />
     <Content Include="Views\Books\Delete.cshtml" />
     <Content Include="Views\Books\Home.cshtml" />
-    <Content Include="Views\Books\ProductsOld.cshtml" />
     <Content Include="Views\Books\Links.cshtml" />
     <Content Include="Views\Books\Products.cshtml" />
     <Content Include="Views\Books\Test.cshtml" />
-    <Content Include="Views\Cart\CartOld.cshtml" />
     <Content Include="Views\Cart\_Cart.cshtml" />
     <Content Include="Views\Cart\_TotalCost.cshtml" />
-    <Content Include="Views\Cart\Test.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

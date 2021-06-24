@@ -52,16 +52,13 @@ namespace BookWebApp.Controllers
                 Repository.AddCart(cart1);
 
                 return RedirectToAction("Products", "Books");
-                //return PartialView("_Cart", cartList);
-
             }
             else
             {
                 cart.Quantity++;
                 Repository.EditCart(cart);
+                
                 return RedirectToAction("Products", "Books");
-                //var cartList2 = Repository.GetCart();
-                //return PartialView("_Cart", cartList2);
             }
         }
 
@@ -88,10 +85,5 @@ namespace BookWebApp.Controllers
 
         //    return RedirectToAction("Products2", "Books");
         //}
-
-        public ActionResult Test()
-        {
-            return View();
-        }
     }
 }
