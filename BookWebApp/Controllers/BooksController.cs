@@ -140,7 +140,6 @@ namespace BookWebApp.Controllers
         {
             var viewModel = new ProductsViewModel();
 
-            viewModel.AuthorList = Repository.GetAuthorList();
             viewModel.BookList = Repository.GetProducts();
             viewModel.Init(Repository);
 

@@ -34,7 +34,6 @@ namespace BookShared.Data
                     .ToList();
         }
 
-        // Cart/Cart, Cart/_Cart2 and Cart/Add
         public IList<Cart> GetCart()
         {
             return _context.Carts

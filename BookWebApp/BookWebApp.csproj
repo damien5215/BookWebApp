@@ -103,16 +103,21 @@
     <Content Include="Content\StyleSheet1.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Images\cartDisplay.png" />
     <Content Include="Images\products01.png" />
-    <Content Include="Images\products02.png" />
-    <Content Include="Images\Products03.png" />
-    <Content Include="Images\Products04.png" />
-    <Content Include="Images\Products05.png" />
+    <Content Include="Images\Products04a.png" />
     <Content Include="Images\products06.png" />
     <Content Include="Images\Products07.png" />
     <Content Include="Images\Products08.png" />
     <Content Include="Images\Products09.png" />
     <Content Include="Images\Products10.png" />
+    <Content Include="Images\Products11.png" />
+    <Content Include="Images\productsController01.png" />
+    <Content Include="Images\ProductsViewModel.png" />
+    <Content Include="Images\RepoGetCart.png" />
+    <Content Include="Images\totalCost01.png" />
+    <Content Include="Images\totalCost02.png" />
+    <Content Include="Images\totalCost03.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
@@ -136,7 +141,7 @@
     <Compile Include="ViewModels\BooksAddViewModel.cs" />
     <Compile Include="ViewModels\BooksBaseViewModel.cs" />
     <Compile Include="ViewModels\BooksEditViewModel.cs" />
-    <Compile Include="ViewModels\TotalCostModel.cs" />
+    <Compile Include="ViewModels\TotalCostViewModel.cs" />
     <Compile Include="ViewModels\TestViewModel.cs" />
     <Compile Include="ViewModels\ProductsViewModel.cs" />
   </ItemGroup>

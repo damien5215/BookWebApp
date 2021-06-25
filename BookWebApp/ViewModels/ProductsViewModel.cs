@@ -14,7 +14,6 @@ namespace BookWebApp.ViewModels
         public int AuthorId { get; set; }
 
         public IList<Book> BookList { get; set; }
-        public IList<Author> AuthorList { get; set; }
 
         public ProductsViewModel()
         {
