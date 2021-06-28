@@ -135,7 +135,6 @@ namespace BookWebApp.Controllers
             return View();
         }
 
-
         public ActionResult Products()    
         {
             var viewModel = new ProductsViewModel();
@@ -158,7 +157,7 @@ namespace BookWebApp.Controllers
         }
 
 
-        public ActionResult Links()
+        public ActionResult Extra()
         {
             return View();
         }

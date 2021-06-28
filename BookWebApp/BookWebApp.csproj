@@ -103,7 +103,18 @@
     <Content Include="Content\StyleSheet1.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Images\add01.png" />
+    <Content Include="Images\add02.png" />
+    <Content Include="Images\add03.png" />
+    <Content Include="Images\AddFunction1.png" />
+    <Content Include="Images\AddFunction2.png" />
+    <Content Include="Images\AddFunction3.png" />
+    <Content Include="Images\books3.png" />
     <Content Include="Images\cartDisplay.png" />
+    <Content Include="Images\context1.png" />
+    <Content Include="Images\db02.png" />
+    <Content Include="Images\editCart.png" />
+    <Content Include="Images\page1.png" />
     <Content Include="Images\products01.png" />
     <Content Include="Images\Products04a.png" />
     <Content Include="Images\products06.png" />
@@ -113,6 +124,8 @@
     <Content Include="Images\Products10.png" />
     <Content Include="Images\Products11.png" />
     <Content Include="Images\productsController01.png" />
+    <Content Include="Images\ProductsPOST1.png" />
+    <Content Include="Images\ProductsPOST2.png" />
     <Content Include="Images\ProductsViewModel.png" />
     <Content Include="Images\RepoGetCart.png" />
     <Content Include="Images\totalCost01.png" />
@@ -167,7 +180,7 @@
     <Content Include="Views\Books\Edit.cshtml" />
     <Content Include="Views\Books\Delete.cshtml" />
     <Content Include="Views\Books\Home.cshtml" />
-    <Content Include="Views\Books\Links.cshtml" />
+    <Content Include="Views\Books\Extra.cshtml" />
     <Content Include="Views\Books\Products.cshtml" />
     <Content Include="Views\Books\Test.cshtml" />
     <Content Include="Views\Cart\_Cart.cshtml" />

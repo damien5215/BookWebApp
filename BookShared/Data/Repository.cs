@@ -42,7 +42,6 @@ namespace BookShared.Data
                     .ToList();
         }
 
-        // FOR TESTING
         public Cart GetCartCheck(int id)  
         {
             return _context.Carts
@@ -83,7 +82,6 @@ namespace BookShared.Data
                     .ToList();
         }
 
-        //Books/Products2 (POST)
         public IList<Book> GetFilteredBooks(int authorID)
         {
             return _context.Books
