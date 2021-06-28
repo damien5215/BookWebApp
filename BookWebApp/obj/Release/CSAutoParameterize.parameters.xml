@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="Context-Web.config Connection String" description="Context Connection String used in web.config by the application to access the database." defaultValue="Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=BookAppConfig2;Integrated Security=True;MultipleActiveResultSets=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Damien\\Documents\\GitHub\\BookWebApp\\BookWebApp\\BookWebApp\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Context']/@connectionString" />
+  </parameter>
+  <parameter name="Context_DatabasePublish-Web.config Connection String" description="Context_DatabasePublish Connection String used in web.config by the application to access the database." defaultValue="Context_DatabasePublish.ConnetionString" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Damien\\Documents\\GitHub\\BookWebApp\\BookWebApp\\BookWebApp\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Context_DatabasePublish']/@connectionString" />
+  </parameter>
+</parameters>

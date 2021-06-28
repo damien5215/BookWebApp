@@ -1,0 +1,33 @@
+﻿@model List<BookShared.Models.Cart>
+
+@{
+    ViewBag.Title = "Cart";
+}
+
+<h2>Cart</h2>
+
+@foreach (var cart in Model)
+{
+    <div class="container" id="cartRecord">
+        @*<br>*@@*<hr>*@<br>
+        <div class="row">
+            <div class="col-md-2">
+                <img src="@cart.Book.Img" width="55" height="88">
+            </div>
+            <div class="col-md-2">
+                <p>Title</p>
+                <p>Price</p>
+                <p>Quantity</p>
+                <p>REMOVE FROM CART</p>
+
+            </div>
+            <div class="col-md-2">
+                <p>@cart.Book.Title</p>
+                <p>@cart.Book.Price</p>
+                <p>@cart.Quantity</p>
+                <p>@Html.ActionLink("RFC", "Delete", "Cart", new { id = cart.Id }, new { @style = "color:blue;" })</p>
+            </div>
+        </div>
+    </div>
+}
+

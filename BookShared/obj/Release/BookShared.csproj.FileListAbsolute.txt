@@ -1,0 +1,13 @@
+C:\Users\Damien\Documents\GitHub\BookWebApp\BookWebApp\BookShared\bin\Release\BookShared.dll.config
+C:\Users\Damien\Documents\GitHub\BookWebApp\BookWebApp\BookShared\bin\Release\BookShared.dll
+C:\Users\Damien\Documents\GitHub\BookWebApp\BookWebApp\BookShared\bin\Release\BookShared.pdb
+C:\Users\Damien\Documents\GitHub\BookWebApp\BookWebApp\BookShared\bin\Release\EntityFramework.dll
+C:\Users\Damien\Documents\GitHub\BookWebApp\BookWebApp\BookShared\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Damien\Documents\GitHub\BookWebApp\BookWebApp\BookShared\bin\Release\EntityFramework.xml
+C:\Users\Damien\Documents\GitHub\BookWebApp\BookWebApp\BookShared\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Damien\Documents\GitHub\BookWebApp\BookWebApp\BookShared\obj\Release\BookShared.csprojAssemblyReference.cache
+C:\Users\Damien\Documents\GitHub\BookWebApp\BookWebApp\BookShared\obj\Release\BookShared.Migrations.Initial.resources
+C:\Users\Damien\Documents\GitHub\BookWebApp\BookWebApp\BookShared\obj\Release\BookShared.csproj.GenerateResource.cache
+C:\Users\Damien\Documents\GitHub\BookWebApp\BookWebApp\BookShared\obj\Release\BookShared.csproj.CopyComplete
+C:\Users\Damien\Documents\GitHub\BookWebApp\BookWebApp\BookShared\obj\Release\BookShared.dll
+C:\Users\Damien\Documents\GitHub\BookWebApp\BookWebApp\BookShared\obj\Release\BookShared.pdb

@@ -19,4 +19,5 @@ C:\Users\Damien\Documents\GitHub\BookWebApp\BookWebApp\BookShared\bin\Debug\Enti
 C:\Users\Damien\Documents\GitHub\BookWebApp\BookWebApp\BookShared\obj\Debug\BookShared.csproj.CopyComplete
 C:\Users\Damien\Documents\GitHub\BookWebApp\BookWebApp\BookShared\obj\Debug\BookShared.dll
 C:\Users\Damien\Documents\GitHub\BookWebApp\BookWebApp\BookShared\obj\Debug\BookShared.pdb
-C:\Users\Damien\Documents\GitHub\BookWebApp\BookWebApp\BookShared\obj\Debug\BookShared.csprojAssemblyReference.cache
+C:\Users\Damien\Documents\GitHub\BookWebApp\BookWebApp\BookShared\obj\Debug\BookShared.Migrations.Initial.resources
+C:\Users\Damien\Documents\GitHub\BookWebApp\BookWebApp\BookShared\obj\Debug\BookShared.csproj.GenerateResource.cache

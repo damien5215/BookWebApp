@@ -1,0 +1,39 @@
+﻿@model BookWebApp.ViewModels.BooksBaseViewModel
+
+<div class="row">
+
+    <div class="col-md-6">
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Book.AuthorId, new { @class = "control-label" })
+            @Html.DropDownListFor(m => m.Book.AuthorId,
+            Model.AuthorSelectListItems, "", new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Book.Title, new { @class = "control-label" })
+            @Html.TextBoxFor(m => m.Book.Title, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Book.Price, new { @class = "control-label" })
+            @Html.TextBoxFor(m => m.Book.Price, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Book.Img, new { @class = "control-label" })
+            @Html.TextBoxFor(m => m.Book.Img, new { @class = "form-control" })
+        </div>
+
+    </div>
+
+    <div class="col-md-6">
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Book.Description, new { @class = "control-label" })
+            @Html.TextAreaFor(m => m.Book.Description, 14, 20, new { @class = "form-control" })
+        </div>
+
+    </div>
+
+</div>

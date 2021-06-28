@@ -1,0 +1,77 @@
+﻿@model BookWebApp.ViewModels.ProductsViewModel
+
+@{
+    ViewBag.Title = "Products";
+}
+
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Filter by Author Name</h2>
+
+            @Html.DropDownListFor(m => m.AuthorId,
+                            Model.AuthorSelectListItems,
+                            new { @class = "form-control" })
+
+            <div class="dropdown d-inline-block">
+                <button type="submit" class="btn btn-primary btn-sm">FILTER</button>
+                <input type="button" class="btn btn-primary btn-sm"
+                        value="RESET" onclick="location.href='@Url.Action("Products", "Books")'" />
+            </div>
+
+        </div>
+
+        <div class="col-md-6">
+            @{Html.RenderAction("_TotalCost", "Cart");}
+        </div>
+    </div>
+}
+
+<div class="row">
+    <div class="col-md-6">
+
+        <h2>Products</h2>
+
+        @foreach (var book in Model.BookList)
+        {
+            <div class="container" id="productRecord">
+                <br>@*<hr>*@<br>
+                <div class="row">
+                    <div class="col-md-2">
+                        <img src="@book.Img" width="100" height="160">
+                    </div>
+                    <div class="col-md-2">
+                        <p>ADD TO CART</p>
+                        <p>Author</p>
+                        <p>Title</p>
+                        <p>Genre</p>
+                        <p>Price</p>
+                        <p>Description</p>
+                    </div>
+                    <div class="col-md-2">
+                        <p>@Html.ActionLink("ADD", "Add", "Cart", new { id = book.Id }, new { @style = "color:blue;" })</p>
+                        <p>@book.Author.Name</p>
+                        <p>@book.Title</p>
+
+                        <p>
+                            @foreach (var genre in book.Genres)
+                            {
+                                @genre.Genre.GenreOfBook
+                                <text> </text>
+                            }
+                        </p>
+
+                        <p>@book.Price</p>
+                        <p>@book.Description</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <div class="col-md-6" id="cartDiv">
+        @{Html.RenderAction("_Cart", "Cart");}
+    </div>
+
+</div>

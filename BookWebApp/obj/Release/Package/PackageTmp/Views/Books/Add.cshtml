@@ -1,0 +1,51 @@
+﻿@model BookWebApp.ViewModels.BooksAddViewModel
+
+@{
+    ViewBag.Title = "Add Book";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm())
+{
+    <h3>Main Information</h3>
+
+    @Html.Partial("_BookForm")
+
+    <h3>First Genre</h3>
+
+    <p>
+        Select a "Genre" and "Fiction/Non-Fiction" to add to this book.
+        Additional Genres can be added once the book has been saved.
+    </p>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                @Html.LabelFor(m => m.GenreId, new { @class = "control-label" })
+                @Html.DropDownListFor(m => m.GenreId,
+                    Model.GenreSelectListItems, "", new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                @Html.LabelFor(m => m.FictionId, new { @class = "control-label" })
+                @Html.DropDownListFor(m => m.FictionId,
+                    Model.FictionSelectListItems, "", new { @class = "form-control" })
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="pad-top">
+                <button type="submit" class="btn btn-success btn-lg margin-right">
+                    <span class="glyphicon glyphicon-save"></span> Save
+                </button>
+                <a href="@Url.Action("Index")" class="btn btn-warning btn-lg">
+                    <span class="glyphicon glyphicon-remove"></span> Cancel
+                </a>
+            </div>
+        </div>
+    </div>
+}
