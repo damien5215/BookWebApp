@@ -223,10 +223,43 @@
 <hr>
 <div class="row">
     <div class="col-md-6">
+        <h3>Added EF Migration (BookShared)</h3>
+        <img class="devBlog" src="~/images/mig03.png" />
+    </div>
+    <div class="col-md-6">
+        <h3>"202106281332275_Initial"</h3>
+        <p>I enabled ef migrations and then added an "initial" migration.</p>
+        <p>When the database is upgraded, the database is created, empty.</p>
+        <p>When the database is downgraded, the database is dropped.</p>
+        <p>The seed method in the configuration puts test data into the database that I'm using locally.</p>
+        <p>Whenever I deploy this webapp, I comment out the "seed data" in the seed method show below.</p>
+        <p>This ensures that the test data doesn't interfere with the data in the server database.</p>
+        <p>I also created a .bak file for the server database in case I need to restore the server database.</p>
+    </div>
+</div>
+
+<br>
+<hr>
+<div class="row">
+    <div class="col-md-6">
+        <h3>202106281332275_Initial.cs</h3>
+        <img class="devBlog" src="~/images/mig01.png" />
+    </div>
+    <div class="col-md-6">
+        <h3>Configuration.cs</h3>
+        <img class="devBlog" src="~/images/mig02.png" />
+    </div>
+</div>
+
+<br>
+<hr>
+<div class="row">
+    <div class="col-md-6">
         <h3>KNOWN ISSUES</h3>
         <p>When adding a book to the cart, all that needs to be updated is the partial view, "_Cart" however currently the whole page is rendered.</p>
         <p>On ".../Books/Products" page, the selected dropdown value resets when an item is added to the cart.</p>
         <p>Currently there isn't a controller for Authors.</p>
+        <p>For the CRUD page (.../Books/Index) client and server validation needs to be implemented.</p>
     </div>
     <div class="col-md-6">
     </div>

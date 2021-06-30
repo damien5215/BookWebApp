@@ -37,6 +37,11 @@ namespace BookWebApp.Controllers
 
         public ActionResult Add(int? id) 
         {
+            if (id == null) 
+            {
+                return RedirectToAction("Error", "Books");
+            }
+
             var book = Repository.GetBook((int)id);
             var cart = Repository.GetCartCheck((int)id);
             var cartList = Repository.GetCart();

@@ -156,8 +156,12 @@ namespace BookWebApp.Controllers
             return View(viewModel);
         }
 
-
         public ActionResult Extra()
+        {
+            return View();
+        }
+
+        public ActionResult Error()
         {
             return View();
         }

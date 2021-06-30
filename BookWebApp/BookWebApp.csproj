@@ -114,6 +114,9 @@
     <Content Include="Images\context1.png" />
     <Content Include="Images\db02.png" />
     <Content Include="Images\editCart.png" />
+    <Content Include="Images\mig01.png" />
+    <Content Include="Images\mig02.png" />
+    <Content Include="Images\mig03.png" />
     <Content Include="Images\page1.png" />
     <Content Include="Images\products01.png" />
     <Content Include="Images\Products04a.png" />
@@ -186,6 +189,7 @@
     <Content Include="Views\Books\Test.cshtml" />
     <Content Include="Views\Cart\_Cart.cshtml" />
     <Content Include="Views\Cart\_TotalCost.cshtml" />
+    <Content Include="Views\Books\Error.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

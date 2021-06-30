@@ -15,11 +15,6 @@
 
         protected override void Seed(BookShared.Data.Context context)
         {
-            //  This method will be called after migrating to the latest version.
-
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method
-            //  to avoid creating duplicate seed data.
-
             //var author1 = new Author()
             //{
             //    Name = "Stephen Fry",
@@ -192,6 +187,11 @@
             //context.Books.Add(book9);
 
             //context.SaveChanges();
+
+            //  This method will be called after migrating to the latest version.
+
+            //  You can use the DbSet<T>.AddOrUpdate() helper extension method
+            //  to avoid creating duplicate seed data.
 
         }
     }
