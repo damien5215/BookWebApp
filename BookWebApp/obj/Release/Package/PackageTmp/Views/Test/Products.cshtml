@@ -1,0 +1,51 @@
+﻿@model BookWebApp.ViewModels.ProductsViewModel
+
+@{
+    ViewBag.Title = "Products";
+}
+
+@*@using (Html.BeginForm())
+{*@
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Filter by Author Name</h2>
+
+            @Html.DropDownListFor(m => m.AuthorId,
+                            Model.AuthorSelectListItems,
+                            new { @class = "form-control", @id = "authorList" })
+
+            <div class="dropdown d-inline-block">
+                @*<button type="submit" class="btn btn-primary btn-sm">FILTER</button>*@
+                <button type="button" class="btn btn-primary btn-sm" id="filterBooks">FILTER AJAX</button>
+                @*<input type="button" class="btn btn-primary btn-sm"
+                        value="RESET" onclick="location.href='@Url.Action("Products", "Books")'" />*@
+                <button type="button" class="btn btn-primary btn-sm" id="resetFilter">RESET FILTER</button>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-6" id="totalCost">
+            @{Html.RenderAction("_TotalCost", "Cart");}
+        </div>
+    </div>
+@*}*@
+
+<div class="row">
+    <div class="col-md-6">
+
+        <div class="col-md-6" id="bookTable">
+            @{Html.RenderAction("_Book", "Test");}
+        </div>
+
+    </div>
+
+    <div class="col-md-6" id="refTable">
+        @{Html.RenderAction("_Cart", "Cart");}
+    </div>
+
+</div>
+
+
+
+<script src="~/Scripts/EditCart.js"></script>

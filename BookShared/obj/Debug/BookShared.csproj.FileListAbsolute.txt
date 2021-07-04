@@ -21,3 +21,4 @@ C:\Users\Damien\Documents\GitHub\BookWebApp\BookWebApp\BookShared\obj\Debug\Book
 C:\Users\Damien\Documents\GitHub\BookWebApp\BookWebApp\BookShared\obj\Debug\BookShared.pdb
 C:\Users\Damien\Documents\GitHub\BookWebApp\BookWebApp\BookShared\obj\Debug\BookShared.Migrations.Initial.resources
 C:\Users\Damien\Documents\GitHub\BookWebApp\BookWebApp\BookShared\obj\Debug\BookShared.csproj.GenerateResource.cache
+C:\Users\Damien\Documents\GitHub\BookWebApp\BookWebApp\BookShared\obj\Debug\BookShared.csprojAssemblyReference.cache

@@ -1,0 +1,63 @@
+﻿@model List<BookShared.Models.Cart>
+
+@{
+    ViewBag.Title = "Cart2";
+}
+
+<h2>Cart</h2>
+
+@foreach (var cart in Model)
+{
+    <div class="container" id="cartRecord">
+        @*<br>*@@*<hr>*@<br>
+        <div class="row">
+            <div class="col-md-2">
+                <img src="@cart.Book.Img" width="55" height="88">
+            </div>
+            <div class="col-md-2">
+                <p>Title</p>
+                <p>Price</p>
+                <p>Quantity</p>
+                <p>REMOVE FROM CART</p>
+
+            </div>
+            <div class="col-md-2">
+                <p>@cart.Book.Title</p>
+                <p>@cart.Book.Price</p>
+                <p>@cart.Quantity</p>
+                <p>@Html.ActionLink("RFC", "Delete", "Cart", new { id = cart.Id }, new { @style = "color:blue;" })</p>
+                @*<p><button type="button" id="@cart.Id" class="btnDelete">Click</button></p>*@
+            </div>
+        </div>
+    </div>
+}
+
+@*<script>
+    $(".btnDelete").on("click", function () {
+
+        $('#totalCost').hide();
+
+        $.ajax({
+            url: "/Cart/RemoveFromCart/" + this.id,
+            type: "GET"
+        }).done(function () {
+
+            $.ajax({
+                url: "/Cart/_Cart",
+                type: "GET"
+            })
+                .done(function (partialViewResult) {
+                    $("#refTable").html(partialViewResult);
+
+                    $.ajax({
+                        url: "/Cart/_TotalCost",
+                        type: "GET"
+                    }).done(function (partialViewResult) {
+                        $("#totalCost").html(partialViewResult);
+                        $('#totalCost').show();
+                    });
+
+                });
+        });
+    });
+</script>*@

@@ -19,6 +19,13 @@ namespace BookWebApp.Controllers
             return View(books);
         }
 
+        // No AJAX
+        public ActionResult _Cart2()
+        {
+            var books = Repository.GetCart();
+            return View(books);
+        }
+
         public ActionResult _TotalCost()
         {
             var cartBooks = Repository.GetCart();
@@ -35,9 +42,10 @@ namespace BookWebApp.Controllers
             return View(viewModel);
         }
 
-        public ActionResult Add(int? id) 
+        // No AJAX
+        public ActionResult Add(int? id)
         {
-            if (id == null) 
+            if (id == null)
             {
                 return RedirectToAction("Error", "Books");
             }
@@ -54,20 +62,47 @@ namespace BookWebApp.Controllers
                     Book = book,
                     Quantity = 1
                 };
-                
+
                 Repository.AddCart(cart1);
 
-                return RedirectToAction("Products", "Books");
+                return RedirectToAction("Products", "Main");
             }
             else
             {
                 cart.Quantity++;
                 Repository.EditCart(cart);
-                
-                return RedirectToAction("Products", "Books");
+
+                return RedirectToAction("Products", "Main");
             }
         }
 
+        // EditCart.js calls this method when button clicked
+        public void AddToCart(int? id)
+        {
+            var book = Repository.GetBook((int)id);
+            var cart = Repository.GetCartCheck((int)id);
+            var cartList = Repository.GetCart();
+
+            if (cart == null)
+            {
+                var cart1 = new Cart()
+                {
+                    Id = (cartList.Count + 1),
+                    Book = book,
+                    Quantity = 1
+                };
+
+                Repository.AddCart(cart1);
+            }
+            else
+            {
+                cart.Quantity++;
+                Repository.EditCart(cart);
+            }
+        }
+
+
+        // No AJAX
         public ActionResult Delete(int id)
         {
             var cart = Repository.GetCartCheckDelete(id);
@@ -76,12 +111,27 @@ namespace BookWebApp.Controllers
             {
                 cart.Quantity--;
                 Repository.EditCart(cart);
-                return RedirectToAction("Products", "Books");
+                return RedirectToAction("Products", "Main");
             }
-            else 
+            else
             {
                 Repository.DeleteCart(id);
-                return RedirectToAction("Products", "Books");
+                return RedirectToAction("Products", "Main");
+            }
+        }
+
+        public void RemoveFromCart(int id)
+        {
+            var cart = Repository.GetCartCheckDelete(id);
+
+            if (cart.Quantity > 1)
+            {
+                cart.Quantity--;
+                Repository.EditCart(cart);
+            }
+            else
+            {
+                Repository.DeleteCart(id);
             }
         }
 

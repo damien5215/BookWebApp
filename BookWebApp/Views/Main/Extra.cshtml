@@ -262,6 +262,49 @@
         <p>For the CRUD page (.../Books/Index) client and server validation needs to be implemented.</p>
     </div>
     <div class="col-md-6">
+        <h3>Ajax Calls</h3>
+        <p>To solve the problems described I created a new contoller called "test" and reorgansied the code.</p>
+        <p>".../Test/Products" - The book table is now a "partial page".</p>
+        <p>When the add and remove butoons are clicked, Ajax calls reload the "_Cart" parital page.</p>
+        <p>Also the dropdown filter buttons are also using Ajax calls to reload the "_Book" partial page.</p>
+        <p>NOTE - The older version of the "Products" page, that doesn't use Ajax to do the post-backs to the server, can be accessed using this URL: <a href="~/Main/Products">.../Main/Products</a> </p>
+    </div>
+</div>
+
+
+
+
+<br>
+<hr>
+<div class="row">
+    <div class="col-md-6">
+        <h3>jQuery: AddToCart</h3>
+        <img class="devBlog" src="~/images/js01.png" />
+    </div>
+    <div class="col-md-6">
+        <h3>AddToCart Button</h3>
+        <p>All of the buttons belong to the class "btnAdd".</p>
+        <p>When one of them is clicked, the "_TotalCost" parital page is set to hidden and the id of the book of the corresponding button, is sent to "/Cart/AddToCart".</p>
+        <p>Once this is completed the "_Cart" partial page is reloaded and the "TotalCost" method is called.</p>
+        <p>Once the new total cost is calculated, the "_TotalCost" partial page is reloaded.</p>
+        <p>The remove from cart follows a similar procedure.</p>
+    </div>
+</div>
+
+<br>
+<hr>
+<div class="row">
+    <div class="col-md-6">
+        <h3>jQuery: DropDown Functions</h3>
+        <img class="devBlog" src="~/images/js02.png" />
+    </div>
+    <div class="col-md-6">
+        <h3>"Filter Books" and "Reset Filter"</h3>
+        <p>When an author is seleced and the "Filter Books" button is clicked, the id of the selected author is loaded to the variable x1.</p>
+        <p>Then an Ajax call is made and the id is posted to "/Test/_Book".</p>
+        <p>Once this function has executed, the "_Book" parital page is reloaded and the filtered list appears.</p>
+        <p>When the "Reset Filter" button is clicked another Ajax call is made (GET) to "/Test/_Book".</p>
+        <p>Once this function has executed, the "_Book" parital page is reloaded and the full list of books reloads.</p>
     </div>
 </div>
 
