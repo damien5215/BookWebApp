@@ -39,5 +39,11 @@ namespace BookWebApp.Controllers
             return PartialView(viewModel);
 
         }
+
+        public ActionResult ProductsTest()
+        {
+            var books = Repository.GetProducts();
+            return View(books);
+        }
     }
 }
