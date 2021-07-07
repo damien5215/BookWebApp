@@ -165,6 +165,7 @@
     <Compile Include="ViewModels\BooksAddViewModel.cs" />
     <Compile Include="ViewModels\BooksBaseViewModel.cs" />
     <Compile Include="ViewModels\BooksEditViewModel.cs" />
+    <Compile Include="ViewModels\ProductsTestViewModel.cs" />
     <Compile Include="ViewModels\TotalCostViewModel.cs" />
     <Compile Include="ViewModels\ProductsViewModel.cs" />
   </ItemGroup>
@@ -198,6 +199,7 @@
     <Content Include="Views\Main\Products.cshtml" />
     <Content Include="Views\Main\Extra.cshtml" />
     <Content Include="Views\Test\ProductsTest.cshtml" />
+    <Content Include="Views\Test\_ProductsTestBooks.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

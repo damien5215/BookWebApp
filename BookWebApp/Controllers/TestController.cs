@@ -40,10 +40,26 @@ namespace BookWebApp.Controllers
 
         }
 
+        // test 
         public ActionResult ProductsTest()
         {
-            var books = Repository.GetProducts();
-            return View(books);
+            var viewModel = new ProductsTestViewModel();
+
+            viewModel.BookList = Repository.GetProducts();
+            viewModel.Init(Repository);
+
+            return View(viewModel);
+        }
+        // test 
+        [HttpPost]
+        public ActionResult ProductsTest(string searchString)
+        {
+            var viewModel = new ProductsTestViewModel();
+
+            viewModel.BookList = Repository.GetFilteredBooksString(searchString);
+            viewModel.Init(Repository);
+
+            return View(viewModel);
         }
     }
 }

@@ -70,5 +70,20 @@
     <script src="~/Scripts/bootstrap.min.js"></script>
     @*<script src="~/Scripts/EditCart.js"></script>*@
 
+    <script>
+        $("#searchBtn").on("click", function () {
+
+            var searchString = $("#textBox1").Val();
+
+            //$('#totalCost').hide();
+            console.log(searchString);
+
+            $.ajax({
+                url: "/Test/ProductsTest/" + searchString,
+                type: "POST"
+            })
+        });
+    </script>
+
 </body>
 </html>

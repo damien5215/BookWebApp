@@ -90,7 +90,17 @@ namespace BookShared.Data
                     .Where(b => b.Author.Id == authorID)
                     .ToList();
         }
-        
+
+        public IList<Book> GetFilteredBooksString(string title)
+        {
+            return _context.Books
+                    .Include(b => b.Genres.Select(c => c.Genre))
+                    .Include(b => b.Author)
+                    //.Where(b => b.Author.Id == authorID)
+                    .Where(b => b.Title == title)
+                    .ToList();
+        }
+
 
         public Book GetBook(int id)
         {
