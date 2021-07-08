@@ -58,6 +58,8 @@
         </div>
     </div>
 
+
+
     <div class="container body-content">
         @RenderBody()
         @*<hr />*@
@@ -68,22 +70,16 @@
 
     <script src="~/Scripts/jquery-3.3.1.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
+
+    @RenderSection("scripts", required: false)
+
     @*<script src="~/Scripts/EditCart.js"></script>*@
 
-    <script>
-        $("#searchBtn").on("click", function () {
-
-            var searchString = $("#textBox1").Val();
-
-            //$('#totalCost').hide();
-            console.log(searchString);
-
-            $.ajax({
-                url: "/Test/ProductsTest/" + searchString,
-                type: "POST"
-            })
-        });
-    </script>
 
 </body>
+
+
+
+
 </html>
+

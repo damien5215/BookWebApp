@@ -1,12 +1,12 @@
-﻿@*@model List<BookShared.Models.Book>*@
-@model BookWebApp.ViewModels.ProductsViewModel
+﻿@model BookWebApp.ViewModels.ProductsTestViewModel
 
 
 @{
-    ViewBag.Title = "_Book";
+    ViewBag.Title = "_ProductsTestBooks";
 }
 
-<h2>Products</h2>
+@*<h2>Products</h2>*@
+
 
 @foreach (var book in Model.BookList)
 {
@@ -17,7 +17,7 @@
                 <img src="@book.Img" width="100" height="160">
             </div>
             <div class="col-md-2">
-                <p>ADD TO CART</p>
+                @*<p>ADD TO CART</p>*@
                 <p>Author</p>
                 <p>Title</p>
                 <p>Genre</p>
@@ -26,7 +26,7 @@
             </div>
             <div class="col-md-2">
                 @*<p>@Html.ActionLink("ADD", "Add", "Cart", new { id = book.Id }, new { @style = "color:blue;" })</p>*@
-                <p><button type="button" id="@book.Id" class="btnAdd">Click</button></p>
+                @*<p><button type="button" id="@book.Id" class="btnAdd">Click</button></p>*@
                 <p>@book.Author.Name</p>
                 <p>@book.Title</p>
 
@@ -45,32 +45,3 @@
     </div>
 }
 
-<script>
-    $(".btnAdd").on("click", function () {
-
-        $('#totalCost').hide();
-        console.log("Add button clicked, ID is " + this.id);
-
-        $.ajax({
-            url: "/Cart/AddToCart/" + this.id,
-            type: "GET"
-        }).done(function () {
-
-            $.ajax({
-                url: "/Cart/_Cart",
-                type: "GET"
-            }).done(function (partialViewResult) {
-                $("#refTable").html(partialViewResult);
-
-                $.ajax({
-                    url: "/Cart/_TotalCost",
-                    type: "GET"
-                }).done(function (partialViewResult) {
-                    $("#totalCost").html(partialViewResult);
-                    $('#totalCost').show();
-                });
-
-            });
-        });
-    });
-</script>
