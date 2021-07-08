@@ -40,36 +40,17 @@ namespace BookWebApp.Controllers
 
         }
 
-        // test 
+
         public ActionResult ProductsTest()
         {
-            //var viewModel = new ProductsTestViewModel();
-
-            //viewModel.BookList = Repository.GetProducts();
-            //viewModel.Init(Repository);
-
-            //return View(viewModel);
             return View();
         }
-        // test 
-        [HttpPost]
-        public ActionResult ProductsTest(string searchString)
-        {
-            var viewModel = new ProductsTestViewModel();
 
-            viewModel.BookList = Repository.GetFilteredBooksString(searchString);
-            viewModel.Init(Repository);
-
-            return View(viewModel);
-        }
-
-
+        
         public ActionResult _ProductsTestBooks()
         {
             var viewModel = new ProductsTestViewModel();
-
             viewModel.BookList = Repository.GetProducts();
-            viewModel.Init(Repository);
 
             return View(viewModel);
         }
@@ -95,10 +76,7 @@ namespace BookWebApp.Controllers
                 viewModel.IsGenre = true;
             }
 
-            viewModel.Init(Repository);
-
             return PartialView(viewModel);
-
         }
     }
 }

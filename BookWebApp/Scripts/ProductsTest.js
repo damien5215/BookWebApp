@@ -18,3 +18,14 @@
     }
 
 });
+
+$("#resetBtn").on("click", function () {
+
+    $.ajax({
+        url: "/Test/_ProductsTestBooks/",
+        type: "GET"
+    })
+        .done(function (partialViewResult) {
+            $("#bookTable3").html(partialViewResult);
+        });
+});
