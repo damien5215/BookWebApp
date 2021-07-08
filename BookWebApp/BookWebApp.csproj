@@ -133,6 +133,11 @@
     <Content Include="Images\ProductsPOST2.png" />
     <Content Include="Images\ProductsViewModel.png" />
     <Content Include="Images\RepoGetCart.png" />
+    <Content Include="Images\search01.png" />
+    <Content Include="Images\search01b.png" />
+    <Content Include="Images\search02.png" />
+    <Content Include="Images\search03.png" />
+    <Content Include="Images\search05.png" />
     <Content Include="Images\totalCost01.png" />
     <Content Include="Images\totalCost02.png" />
     <Content Include="Images\totalCost03.png" />
