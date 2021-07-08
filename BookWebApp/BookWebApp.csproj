@@ -201,6 +201,7 @@
     <Content Include="Views\Main\Extra.cshtml" />
     <Content Include="Views\Test\ProductsTest.cshtml" />
     <Content Include="Views\Test\_ProductsTestBooks.cshtml" />
+    <Content Include="Views\Test\_ProductsTestBookGenres.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

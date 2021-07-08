@@ -11,7 +11,7 @@ namespace BookWebApp.ViewModels
 {
     public class ProductsTestViewModel : BooksBaseViewModel
     {
-        public bool IsGenre { get; set; }
+        public bool IsGenre { get; set; } = false;
 
         public IList<Book> BookList { get; set; }
         public IList<BookGenre> BookGenreList { get; set; }

@@ -79,7 +79,22 @@ namespace BookWebApp.Controllers
         {
             var viewModel = new ProductsTestViewModel();
 
+            // search by "Book Title"
             viewModel.BookList = Repository.GetFilteredBooksString(searchString);
+
+            // search by "Author Name"
+            if (viewModel.BookList.Count == 0) 
+            { 
+                viewModel.BookList = Repository.GetFilteredBooksString2(searchString);
+            }
+
+            // search by "Genre"
+            if (viewModel.BookList.Count == 0)
+            {
+                viewModel.BookGenreList = Repository.GetFilteredBooksString3(searchString);
+                viewModel.IsGenre = true;
+            }
+
             viewModel.Init(Repository);
 
             return PartialView(viewModel);

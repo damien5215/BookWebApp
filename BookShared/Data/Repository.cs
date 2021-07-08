@@ -96,10 +96,30 @@ namespace BookShared.Data
             return _context.Books
                     .Include(b => b.Genres.Select(c => c.Genre))
                     .Include(b => b.Author)
-                    //.Where(b => b.Author.Id == authorID)
                     .Where(b => b.Title == title)
                     .ToList();
         }
+
+        public IList<Book> GetFilteredBooksString2(string title)
+        {
+            return _context.Books
+                    .Include(b => b.Genres.Select(c => c.Genre))
+                    .Include(b => b.Author)
+                    .Where(b => b.Author.Name == title)
+                    .ToList();
+        }
+
+        public IList<BookGenre> GetFilteredBooksString3(string title)
+        {
+            return _context.BookGenres
+                    .Include(b => b.Book)
+                    .Include(b => b.Genre)
+                    .Include(b => b.Book.Author)
+                    .Where(b => b.Genre.GenreOfBook == title)
+                    .ToList();
+        }
+
+
 
 
         public Book GetBook(int id)
