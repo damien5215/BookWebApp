@@ -20,12 +20,21 @@
     </div>
 </div>
 
+
 <br>
 <hr>
 <div class="row">
-    <div class="col-md-12">
-        <h3>Database Scheme Diagram</h3>
-        <img class="devBlog" src="~/images/db02.png" />
+    <div class="col-md-6">
+        <h3>Database Schema Diagram</h3>
+        <img class="devBlog" src="~/images/db03.png" />
+    </div>
+    <div class="col-md-6">
+        <h3>Relational Database Design</h3>
+        <p>There are six tables.</p>
+        <p>(N) means navigation property.</p>
+        <p>There are five "One to Many" relationships and one "Many to Many".</p>
+        <p>BookGenre is a bridge-entity, used for the "Many to Many" relationship between "Book" and "Genre".</p>
+
     </div>
 </div>
 
@@ -299,10 +308,22 @@
         <img class="devBlog" src="~/images/js02.png" />
     </div>
     <div class="col-md-6">
-        <h3>"Filter Books" and "Reset Filter"</h3>
+        <h3>"Filter Books"</h3>
         <p>When an author is seleced and the "Filter Books" button is clicked, the id of the selected author is loaded to the variable x1.</p>
         <p>Then an Ajax call is made and the id is posted to "/Test/_Book".</p>
         <p>Once this function has executed, the "_Book" parital page is reloaded and the filtered list appears.</p>
+    </div>
+</div>
+
+<br>
+<hr>
+<div class="row">
+    <div class="col-md-6">
+        <h3>jQuery: DropDown Functions</h3>
+        <img class="devBlog" src="~/images/js03.png" />
+    </div>
+    <div class="col-md-6">
+        <h3>"Reset Filter"</h3>
         <p>When the "Reset Filter" button is clicked another Ajax call is made (GET) to "/Test/_Book".</p>
         <p>Once this function has executed, the "_Book" parital page is reloaded and the full list of books reloads.</p>
     </div>
@@ -312,12 +333,16 @@
 <hr>
 <div class="row">
     <div class="col-md-6">
-        <h3>jQuery: DropDown Functions</h3>
-        <img class="devBlog" src="~/images/search01.png" />
+        <h3>Test: Filter by "String"</h3>
+        <p>I also implemented a search textbox which allows the user to filter the list of books by - </p>
+        <p>"Book Title"</p>
+        <p>"Author Name"</p>
+        <p>"Genre"</p>
+        <p>This page can be accessed using this URL - <a href="~/Test/ProductsTest">.../Test/ProductsTest</a></p>
     </div>
     <div class="col-md-6">
-        <h3>"Filter Books" and "Reset Filter"</h3>
-        <img class="devBlog" src="~/Images/search01b.png" />
+        @*<h3>djdsj</h3>*@
+        @*<p>djjsd</p>*@
     </div>
 </div>
 
@@ -325,11 +350,24 @@
 <hr>
 <div class="row">
     <div class="col-md-6">
-        <h3>jQuery: DropDown Functions</h3>
-        <img class="devBlog" src="~/images/search02.png" />
+        <h3>Rendered View</h3>
+        <img class="devBlog" src="~/images/search01.png" />
     </div>
     <div class="col-md-6">
-        <h3>"Filter Books" and "Reset Filter"</h3>
+        <h3>jQuery: "Filter Button"</h3>
+        <img class="devBlog" src="~/Images/search02.png" />
+    </div>
+</div>
+
+<br>
+<hr>
+<div class="row">
+    <div class="col-md-6">
+        <h3>View: ProductsTest</h3>
+        <img class="devBlog" src="~/images/search01b.png" />
+    </div>
+    <div class="col-md-6">
+        <h3>Test Controller: POST Method</h3>
         <img class="devBlog" src="~/Images/search03.png" />
     </div>
 </div>
@@ -342,10 +380,27 @@
         <img class="devBlog" src="~/images/search05.png" />
     </div>
     <div class="col-md-6">
-        <h3>"Filter Books" and "Reset Filter"</h3>
-        <p>dssd  <a href="~/Test/ProductsTest">.../Test/ProductsTest</a> sddssddss</p>
+        <h3>Test Controller: POST Method</h3>
+        <img class="devBlog" src="~/images/search06.png" />
     </div>
 </div>
+
+<br>
+<hr>
+<div class="row">
+    <div class="col-md-6">
+        <h3>Four Controllers</h3>
+        <img class="devBlog" src="~/images/controllers.png" />
+    </div>
+    <div class="col-md-6">
+        <h3>Description</h3>
+        <p>The books controller handles all of the requests for the book CRUD operations.</p>
+        <p>The cart controller handles all of the requests for the cart. Some of these methods are called by jQuery Ajax.</p>
+        <p>The main controller handles all of the requests for the main site. None of these action-methods are called by Ajax.</p>
+        <p>The test controller, contains some action-methods which are accessed via Ajax calls.</p>
+    </div>
+</div>
+
 
 <br>
 <br>

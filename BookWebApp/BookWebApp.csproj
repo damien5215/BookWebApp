@@ -112,10 +112,13 @@
     <Content Include="Images\books3.png" />
     <Content Include="Images\cartDisplay.png" />
     <Content Include="Images\context1.png" />
+    <Content Include="Images\controllers.png" />
     <Content Include="Images\db02.png" />
+    <Content Include="Images\db03.png" />
     <Content Include="Images\editCart.png" />
     <Content Include="Images\js01.png" />
     <Content Include="Images\js02.png" />
+    <Content Include="Images\js03.png" />
     <Content Include="Images\mig01.png" />
     <Content Include="Images\mig02.png" />
     <Content Include="Images\mig03.png" />
@@ -138,6 +141,7 @@
     <Content Include="Images\search02.png" />
     <Content Include="Images\search03.png" />
     <Content Include="Images\search05.png" />
+    <Content Include="Images\search06.png" />
     <Content Include="Images\totalCost01.png" />
     <Content Include="Images\totalCost02.png" />
     <Content Include="Images\totalCost03.png" />
