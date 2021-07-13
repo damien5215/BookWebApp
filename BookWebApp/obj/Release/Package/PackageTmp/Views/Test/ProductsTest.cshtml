@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "ProductsTest";
+}
+
+<h2>ProductsTest</h2>
+<br>
+
+<input type="text" id="textBox1" placeholder="Search..." name="search">
+<button id="searchBtn" class="btndjsd">Filter</button>
+<button id="resetBtn" class="btndjsd">Reset</button>
+<br><br>
+<p style="color:#333">Search by "Book Title", "Author Name" or "Genre".</p>
+
+<div id="bookTable3">
+    @{Html.RenderAction("_ProductsTestBooks", "Test");}
+</div>
+
+@section scripts {
+    <script src="~/Scripts/ProductsTest.js"></script>
+}

@@ -5,30 +5,26 @@
 }
 
 @*@using (Html.BeginForm())
-{*@
-    <div class="row">
-        <div class="col-md-6">
-            <h2>Filter by Author Name</h2>
+    {*@
+<div class="row">
+    <div class="col-md-6">
+        <h2>Filter by Author Name</h2>
 
-            @Html.DropDownListFor(m => m.AuthorId,
-                            Model.AuthorSelectListItems,
-                            new { @class = "form-control", @id = "authorList" })
+        @Html.DropDownListFor(m => m.AuthorId,
+                        Model.AuthorSelectListItems,
+                        new { @class = "form-control", @id = "authorList" })
 
-            <div class="dropdown d-inline-block">
-                @*<button type="submit" class="btn btn-primary btn-sm">FILTER</button>*@
-                <button type="button" class="btn btn-primary btn-sm" id="filterBooks">FILTER AJAX</button>
-                @*<input type="button" class="btn btn-primary btn-sm"
-                        value="RESET" onclick="location.href='@Url.Action("Products", "Books")'" />*@
-                <button type="button" class="btn btn-primary btn-sm" id="resetFilter">RESET FILTER</button>
-
-            </div>
-
+        <div class="dropdown d-inline-block">
+            <button type="button" class="btn btn-primary btn-sm" id="filterBooks">FILTER AJAX</button>
+            <button type="button" class="btn btn-primary btn-sm" id="resetFilter">RESET FILTER</button>
         </div>
 
-        <div class="col-md-6" id="totalCost">
-            @{Html.RenderAction("_TotalCost", "Cart");}
-        </div>
     </div>
+
+    <div class="col-md-6" id="totalCost">
+        @{Html.RenderAction("_TotalCost", "Cart");}
+    </div>
+</div>
 @*}*@
 
 <div class="row">
@@ -47,5 +43,6 @@
 </div>
 
 
-
-<script src="~/Scripts/EditCart.js"></script>
+@section scripts {
+    <script src="~/Scripts/EditCart.js"></script>
+}

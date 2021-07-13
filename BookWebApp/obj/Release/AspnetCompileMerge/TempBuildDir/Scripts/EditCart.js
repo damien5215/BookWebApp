@@ -1,34 +1,8 @@
 ﻿$(document).ready(function () {
-    //$(".btnAdd").on("click", function () {
-
-    //    $('#totalCost').hide();
-    //    console.log("Add button clicked, ID is " + this.id);
-
-    //    $.ajax({
-    //        url: "/Cart/AddToCart/" + this.id,
-    //        type: "GET"
-    //    }).done(function () {
-
-    //        $.ajax({
-    //            url: "/Cart/_Cart",
-    //            type: "GET"
-    //        }).done(function (partialViewResult) {
-    //            $("#refTable").html(partialViewResult);
-
-    //            $.ajax({
-    //                url: "/Cart/_TotalCost",
-    //                type: "GET"
-    //            }).done(function (partialViewResult) {
-    //                $("#totalCost").html(partialViewResult);
-    //                $('#totalCost').show();
-    //            });
-
-    //        });
-    //    });
-    //});
-
     
     $("#filterBooks").on("click", function () {
+
+        $("#filterBooks").css('background-color', 'darkblue');
 
         var x1 = $("#authorList").val()
         console.log("ID selected is " + x1);
@@ -44,6 +18,8 @@
     });
 
     $("#resetFilter").on("click", function () {
+
+        $("#filterBooks").css('background-color', '#337ab7');
 
         $.ajax({
             url: "/Test/_Book/",
