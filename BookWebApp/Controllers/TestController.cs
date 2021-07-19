@@ -40,7 +40,6 @@ namespace BookWebApp.Controllers
 
         }
 
-
         public ActionResult ProductsTest()
         {
             return View();

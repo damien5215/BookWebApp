@@ -34,6 +34,7 @@ namespace BookShared.Data
                     .ToList();
         }
 
+
         public IList<Cart> GetCart()
         {
             return _context.Carts
@@ -96,7 +97,8 @@ namespace BookShared.Data
             return _context.Books
                     .Include(b => b.Genres.Select(c => c.Genre))
                     .Include(b => b.Author)
-                    .Where(b => b.Title == title)
+                    //.Where(b => b.Title == title)
+                    .Where(b => b.Title.Contains(title))
                     .ToList();
         }
 
@@ -105,7 +107,8 @@ namespace BookShared.Data
             return _context.Books
                     .Include(b => b.Genres.Select(c => c.Genre))
                     .Include(b => b.Author)
-                    .Where(b => b.Author.Name == title)
+                    //.Where(b => b.Author.Name == title)
+                    .Where(b => b.Author.Name.Contains(title))
                     .ToList();
         }
 

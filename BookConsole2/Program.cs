@@ -21,8 +21,6 @@ namespace BookConsole2
 
                 var books = booksQuery
                     .Include(b => b.Author)
-                    //.Where(b => b.Author.Name == "Simone De Beauvoir")
-                    //.Where(b => b.Title.Contains("The"))
                     .ToList();
 
                 Console.WriteLine("Number of Books: {0}", books.Count);
