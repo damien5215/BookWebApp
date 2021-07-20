@@ -211,6 +211,7 @@
     <Content Include="Views\Test\ProductsTest.cshtml" />
     <Content Include="Views\Test\_ProductsTestBooks.cshtml" />
     <Content Include="Views\Test\_ProductsTestBookGenres.cshtml" />
+    <Content Include="Views\Cart\_Cart3.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
