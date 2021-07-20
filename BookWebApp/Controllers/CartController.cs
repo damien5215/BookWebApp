@@ -19,8 +19,13 @@ namespace BookWebApp.Controllers
             return View(books);
         }
 
-        // No AJAX
         public ActionResult _Cart2()
+        {
+            var books = Repository.GetCart();
+            return View(books);
+        }
+
+        public ActionResult _Cart3()
         {
             var books = Repository.GetCart();
             return View(books);
