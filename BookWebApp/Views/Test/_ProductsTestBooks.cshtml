@@ -6,12 +6,14 @@
 
 @*<h2>Products</h2>*@
 
+<br><br>
+
 @if (@Model.IsGenre == false)
 {
     foreach (var book in Model.BookList)
     {
         <div class="container" id="productRecord">
-            <br><br>
+            @*<br><br>*@<br>
             <div class="row">
                 <div class="col-md-2">
                     <img src="@book.Img" width="100" height="160">
@@ -51,7 +53,7 @@ else
     foreach (var book in Model.BookGenreList)
     {
         <div class="container" id="productRecord">
-            <br><br>
+            @*<br>*@<br>
             <div class="row">
                 <div class="col-md-2">
                     <img src="@book.Book.Img" width="100" height="160">

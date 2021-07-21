@@ -3,6 +3,8 @@
     var searchStringJS = $("#textBox1").val();
     console.log(searchStringJS);
 
+    $("#SBmessage").css('color', 'darkblue');
+    
     $.ajax({
         url: "/Test/_ProductsTestBooks/",
         type: "POST",
@@ -20,6 +22,8 @@
 });
 
 $("#resetBtn").on("click", function () {
+
+    $("#SBmessage").css('color', '#333');
 
     $.ajax({
         url: "/Test/_ProductsTestBooks/",

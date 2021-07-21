@@ -1,24 +1,25 @@
 ﻿@model BookWebApp.ViewModels.ProductsTestViewModel
 
-
 @{
     ViewBag.Title = "_ProductsTestBooks";
 }
 
 @*<h2>Products</h2>*@
 
+<br><br>
+
 @if (@Model.IsGenre == false)
 {
     foreach (var book in Model.BookList)
     {
         <div class="container" id="productRecord">
-            <br><br>
+            @*<br><br>*@<br>
             <div class="row">
                 <div class="col-md-2">
                     <img src="@book.Img" width="100" height="160">
                 </div>
                 <div class="col-md-2">
-                    @*<p>ADD TO CART</p>*@
+                    <p>ADD TO CART</p>
                     <p>Author</p>
                     <p>Title</p>
                     <p>Genre</p>
@@ -27,7 +28,7 @@
                 </div>
                 <div class="col-md-2">
                     @*<p>@Html.ActionLink("ADD", "Add", "Cart", new { id = book.Id }, new { @style = "color:blue;" })</p>*@
-                    @*<p><button type="button" id="@book.Id" class="btnAdd">Click</button></p>*@
+                    <p><button type="button" id="@book.Id" class="btnAdd">Click</button></p>
                     <p>@book.Author.Name</p>
                     <p>@book.Title</p>
 
@@ -52,13 +53,13 @@ else
     foreach (var book in Model.BookGenreList)
     {
         <div class="container" id="productRecord">
-            <br><br>
+            @*<br>*@<br>
             <div class="row">
                 <div class="col-md-2">
                     <img src="@book.Book.Img" width="100" height="160">
                 </div>
                 <div class="col-md-2">
-                    @*<p>ADD TO CART</p>*@
+                    <p>ADD TO CART</p>
                     <p>Author</p>
                     <p>Title</p>
                     <p>Genre</p>
@@ -67,7 +68,7 @@ else
                 </div>
                 <div class="col-md-2">
                     @*<p>@Html.ActionLink("ADD", "Add", "Cart", new { id = book.Id }, new { @style = "color:blue;" })</p>*@
-                    @*<p><button type="button" id="@book.Id" class="btnAdd">Click</button></p>*@
+                    <p><button type="button" id="@book.Book.Id" class="btnAdd">Click</button></p>
                     <p>@book.Book.Author.Name</p>
                     <p>@book.Book.Title</p>
                     <p>@book.Genre.GenreOfBook</p>
@@ -81,6 +82,34 @@ else
 }
 
 
+<script>
+    $(".btnAdd").on("click", function () {
 
+        $('#totalCost').hide();
+        console.log("Add button clicked, ID is " + this.id);
+
+        $.ajax({
+            url: "/Cart/AddToCart/" + this.id,
+            type: "GET"
+        }).done(function () {
+
+            $.ajax({
+                url: "/Cart/_Cart",
+                type: "GET"
+            }).done(function (partialViewResult) {
+                $("#refTable").html(partialViewResult);
+
+                $.ajax({
+                    url: "/Cart/_TotalCost",
+                    type: "GET"
+                }).done(function (partialViewResult) {
+                    $("#totalCost").html(partialViewResult);
+                    $('#totalCost').show();
+                });
+
+            });
+        });
+    });
+</script>
 
 

@@ -35,7 +35,8 @@
                             @Html.ActionLink("HOME", "Home", "Main", new { area = "" }, new { @class = "navbar-brand" })
                         </div>
                         <div class="col-md-3">
-                            @Html.ActionLink("PRODUCTS", "Products", "Test", new { area = "" }, new { @class = "navbar-brand" })
+                            @*@Html.ActionLink("PRODUCTS", "Products", "Test", new { area = "" }, new { @class = "navbar-brand" })*@
+                            @Html.ActionLink("PRODUCTS", "Option", "Main", new { area = "" }, new { @class = "navbar-brand" })
                         </div>
                         <div class="col-md-3">
                             @Html.ActionLink("BOOKS", "Index", "Books", new { area = "" }, new { @class = "navbar-brand" })
@@ -62,7 +63,6 @@
 
     <div class="container body-content">
         @RenderBody()
-        @*<hr />*@
         <footer>
             @*<p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>*@
         </footer>
@@ -73,11 +73,8 @@
 
     @RenderSection("scripts", required: false)
 
-    @*<script src="~/Scripts/EditCart.js"></script>*@
-
 
 </body>
-
 
 
 
