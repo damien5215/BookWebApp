@@ -59,6 +59,11 @@ namespace BookWebApp.Controllers
         {
             var viewModel = new ProductsTestViewModel();
 
+            if (searchString == "") 
+            {
+                return PartialView(viewModel);
+            }
+
             // search by "Book Title"
             viewModel.BookList = Repository.GetFilteredBooksString(searchString);
 

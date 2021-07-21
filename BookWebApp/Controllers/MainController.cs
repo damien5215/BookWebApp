@@ -46,5 +46,9 @@ namespace BookWebApp.Controllers
             return View();
         }
 
+        public ActionResult Option()
+        {
+            return View();
+        }
     }
 }

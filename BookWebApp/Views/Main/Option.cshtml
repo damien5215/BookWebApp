@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewBag.Title = "Option";
+}
+
+<h1>Choose Version</h1>@*<br>*@
+
+<h3>There are three versions for the page which lists the products and the cart.</h3>
+<br>
+
+
+@*<p><a href="~/Main/Products">VERSION 1 </a>- Everytime the list of books are filtered or a book is added to the cart the entire page is reloaded (No JavaScript).</p>*@
+
+@*<p><a href="~/Test/Products">VERSION 2 </a>- Everytime the list of books are filtered, just the partial page for the list of books is updated and a jQuery Ajax method posts the data to the server. This is also true for how books are added and removed to the cart and how the total cost is calculated and updated.</p>*@
+
+@*<p><a href="~/Main/ProductsTest">VERSION 3 </a>- This is the same as "version 2" except the user can now filter by "Book Title", "Author Name" and "Genre".</p>*@
+<br>
+
+
+<div class="row">
+    <div class="col-md-1">
+        <p><a href="~/Main/Products">VER 01</a></p>
+    </div>
+
+    <div class="col-md-11">
+        <p>Everytime the list of books are filtered or a book is added to the cart the entire page is reloaded (No JavaScript).</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-1">
+        <p><a href="~/Test/Products">VER 02</a></p>
+    </div>
+
+    <div class="col-md-11">
+        <p>Everytime the list of books are filtered, just the partial page for the list of books is updated and a jQuery Ajax method posts the data to the server. This is also true for how books are added and removed to the cart and how the total cost is calculated and updated.</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-1">
+        <p><a href="~/Test/ProductsTest">VER 03</a></p>
+    </div>
+    <div class="col-md-11">
+        <p>This is the same as "version 2" except the user can now filter by "Book Title", "Author Name" and "Genre" (drop-down changed to search-box).</p>
+    </div>
+</div>
+<br>
+
+
+<p>For more information on how they were developed please see the "EXTRA" page.</p>
+<br>
+
