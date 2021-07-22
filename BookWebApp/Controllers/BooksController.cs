@@ -87,7 +87,7 @@ namespace BookWebApp.Controllers
             var book = viewModel.Book;
             Repository.EditBook(book);
 
-            return RedirectToAction("Detail", new { id = book.Id });
+            return RedirectToAction("Index");
         }
 
         public ActionResult Delete(int? id)
