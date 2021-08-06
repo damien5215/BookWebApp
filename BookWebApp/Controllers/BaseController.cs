@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using BookShared.Data;
 
 namespace BookWebApp.Controllers
@@ -13,7 +9,6 @@ namespace BookWebApp.Controllers
         private bool _disposed = false;
 
         protected Repository Repository { get; private set; }
-
 
         public BaseController()
         {
